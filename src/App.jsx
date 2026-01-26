@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
+import ThankYou from './pages/ThankYou';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/contact" element={<Contact />} />
           </Route>
+          <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
       </BrowserRouter>
     </div>
