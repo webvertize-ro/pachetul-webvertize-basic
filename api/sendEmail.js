@@ -3,8 +3,9 @@ export default function handler(req, res) {
     return res.status(400).json({ status: 'Method not allowed!' });
   }
 
-  const body = req.body;
-  console.log('received data is: ', body);
+  console.log('received data is: ', req.body);
 
-  res.status(200).json({ success: true, message: 'Received data', data: body });
+  res
+    .status(200)
+    .json({ success: true, message: 'Received data', data: req.body });
 }
