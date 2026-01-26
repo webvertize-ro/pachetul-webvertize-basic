@@ -4,14 +4,18 @@ export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(400).json({ status: 'Method not allowed!' });
   }
-  console.log('the received data is: ', req.body);
+  // console.log('the received data is: ', req.body);
 
-  const { name, phone, email, message } = req.body;
+  const { name, phone, email, message, cf_turnstile_token } = req.body;
+
+  console.log('the cf_turnstile_token is: ', cf_turnstile_token);
 
   // Validation
   if (!name || !phone || !email) {
     return res.status(400).json({ status: 'Missing required fields!' });
   }
+
+  // Turnstile validation
 
   // Sending the email
   const transporter = nodemailer.createTransport({
