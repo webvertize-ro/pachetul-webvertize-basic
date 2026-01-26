@@ -50,7 +50,7 @@ function Form({ onCloseModal }) {
         body: formData,
       });
 
-      const data = res.json();
+      const data = await res.json();
       console.log('the reply from the server is: ', data);
     } catch (error) {
       console.error(error);
