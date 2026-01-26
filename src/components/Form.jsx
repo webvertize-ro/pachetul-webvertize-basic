@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 
@@ -32,43 +33,40 @@ const CancelButton = styled.button`
 `;
 
 function Form({ onCloseModal }) {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
   const navigate = useNavigate();
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const collectedData = {
-      name,
-      phone,
-      email,
-      message,
-    };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
 
+  async function onSubmit(data) {
     try {
       const res = await fetch('/api/sendEmail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(collectedData),
+        body: JSON.stringify(data),
       });
 
-      const data = await res.json();
+      const result = await res.json();
 
-      if (res.ok) {
-        // Redirect to the thank-you page
-        navigate('/thank-you');
+      if (!res.ok) {
+        throw new Error(result.message || 'Something went wrong');
       }
-    } catch (error) {
-      console.error(error);
+
+      console.log('Success: ', result);
+      reset();
+    } catch (err) {
+      console.error(err.message);
     }
   }
 
   return (
     <StyledForm
       type={onCloseModal ? 'modal' : 'regular'}
-      onSubmit={(e) => handleSubmit(e)}
+      onSubmit={handleSubmit(onSubmit)}
     >
       <div className="mb-4">
         <label htmlFor="name" className="form-lable">
@@ -78,8 +76,7 @@ function Form({ onCloseModal }) {
           type="text"
           name="name"
           className="form-control"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
+          {...register('name', { required: 'Numele este obligatoriu!' })}
         />
       </div>
       <div className="mb-4">
@@ -90,8 +87,9 @@ function Form({ onCloseModal }) {
           type="text"
           name="phone"
           className="form-control"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
+          {...register('phone', {
+            required: 'Numarul de telefon este obligatoriu!',
+          })}
         />
       </div>
       <div className="mb-4">
@@ -102,8 +100,7 @@ function Form({ onCloseModal }) {
           type="text"
           name="email"
           className="form-control"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          {...register('email', { required: 'Email-ul este obligatoriu!' })}
         />
       </div>
       <div className="mb-4">
@@ -115,8 +112,7 @@ function Form({ onCloseModal }) {
           rows={3}
           name="message"
           className="form-control"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
+          {...register('message')}
         />
       </div>
       <FormButtons>
