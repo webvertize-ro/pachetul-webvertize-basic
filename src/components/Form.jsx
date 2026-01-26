@@ -38,16 +38,18 @@ function Form({ onCloseModal }) {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const formData = new FormData(e.target);
-    formData.append('name', name);
-    formData.append('phone', phone);
-    formData.append('email', email);
-    formData.append('message', message);
+    const formData = {
+      name,
+      phone,
+      email,
+      message,
+    };
 
     try {
       const res = await fetch('/api/sendEmail', {
         method: 'POST',
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
       });
 
       const data = await res.json();
