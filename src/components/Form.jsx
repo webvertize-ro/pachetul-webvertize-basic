@@ -47,8 +47,7 @@ function Form({ onCloseModal }) {
     try {
       const res = await fetch('/api/sendEmail', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: formData,
       });
 
       const data = res.json();
