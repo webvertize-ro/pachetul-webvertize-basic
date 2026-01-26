@@ -57,7 +57,7 @@ export default async function handler(req, res) {
 
   const client = await clientPromise;
   const db = client.db('PacheteWebvertize');
-  const collection = client.db('PachetulWebvertizeBasic');
+  const collection = db.collection('PachetulWebvertizeBasic');
 
   const body = req.body;
 
