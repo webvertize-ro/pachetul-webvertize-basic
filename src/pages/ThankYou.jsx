@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import Logo from '../components/Logo';
 import { Link, useNavigate } from 'react-router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const StyledThankYou = styled.div`
   height: 100vh;
@@ -34,6 +34,8 @@ const StyledButton = styled(Link)`
 function ThankYou() {
   const navigate = useNavigate();
 
+  const [allowed, setAllowed] = useState(false);
+
   useEffect(() => {
     // check sessionStorage
     const formFilledOut = sessionStorage.getItem('formFilledOut');
@@ -44,7 +46,10 @@ function ThankYou() {
 
     // clean sessionStorage, such that if the page was accessed correctly to not work on refresh
     sessionStorage.removeItem('formFilledOut');
+    setAllowed(true);
   }, [navigate]);
+
+  if (!allowed) return null;
 
   return (
     <StyledThankYou>
