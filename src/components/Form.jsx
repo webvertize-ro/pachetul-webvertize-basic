@@ -81,7 +81,6 @@ function Form({ onCloseModal }) {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        {!name && <div>Va rugam sa completati campul Nume!</div>}
       </div>
       <div className="mb-4">
         <label htmlFor="phone" className="form-label">
