@@ -41,17 +41,6 @@ function Form({ onCloseModal }) {
   const [isLoadaing, setIsLoadding] = useState(false);
   const [token, setToken] = useState(null);
 
-  useEffect(() => {
-    if (!window.turnstile) return;
-
-    window.turnstile.render('.cf-turnstile', {
-      sitekey: '0x4AAAAAACREehtKVoDrzPyF',
-      callback: (token) => {
-        setToken(token);
-      },
-    });
-  }, []);
-
   const navigate = useNavigate();
 
   const {
@@ -59,7 +48,26 @@ function Form({ onCloseModal }) {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm();
+  } = useForm({
+    defaultValues: {
+      cf_turnstile_token: '',
+    },
+  });
+
+  const onTurnstileSuccess = (token) => {
+    setToken('cf_turnstile_token', token, {
+      shouldValidate: true,
+    });
+  };
+
+  useEffect(() => {
+    if (!window.turnstile) return;
+
+    window.turnstile.render('.cf-turnstile', {
+      sitekey: '0x4AAAAAACREehtKVoDrzPyF',
+      callback: onTurnstileSuccess,
+    });
+  }, []);
 
   async function onSubmit(data) {
     try {
