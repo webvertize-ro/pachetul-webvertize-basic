@@ -90,6 +90,8 @@ function Form({ onCloseModal }) {
       if (!res.ok) {
         throw new Error(result.message || 'Something went wrong');
       }
+      // set a sessionStorage for having fiiled out the form
+      sessionStorage.setItem('formFilledOut', 'true');
 
       reset();
       navigate('/thank-you');
