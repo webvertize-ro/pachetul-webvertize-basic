@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
+import LoadingSpinner from './LoadingSpinner';
 
 const StyledForm = styled.form`
   width: 400px;
@@ -37,6 +38,7 @@ const ErrorMsg = styled.div`
 `;
 
 function Form({ onCloseModal }) {
+  const [isLoadaing, setIsLoadding] = useState(false);
   const navigate = useNavigate();
 
   const {
@@ -48,6 +50,7 @@ function Form({ onCloseModal }) {
 
   async function onSubmit(data) {
     try {
+      setIsLoadding(true);
       const res = await fetch('/api/sendEmail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -55,12 +58,12 @@ function Form({ onCloseModal }) {
       });
 
       const result = await res.json();
+      setIsLoadding(false);
 
       if (!res.ok) {
         throw new Error(result.message || 'Something went wrong');
       }
 
-      console.log('Success: ', result);
       reset();
       navigate('/thank-you');
     } catch (err) {
@@ -124,7 +127,15 @@ function Form({ onCloseModal }) {
         />
       </div>
       <FormButtons>
-        <SubmitButton type="submit">Trimite</SubmitButton>
+        <SubmitButton type="submit">
+          {isLoadaing ? (
+            <>
+              <LoadingSpinner /> Se trimite...
+            </>
+          ) : (
+            'Trimite'
+          )}
+        </SubmitButton>
         <CancelButton onClick={() => onCloseModal?.()}>Anulează</CancelButton>
       </FormButtons>
     </StyledForm>
