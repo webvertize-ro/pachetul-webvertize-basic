@@ -78,6 +78,7 @@ function Form({ onCloseModal }) {
           className="form-control"
           {...register('name', { required: 'Numele este obligatoriu!' })}
         />
+        {errors.name && <div>{errors.name.message}</div>}
       </div>
       <div className="mb-4">
         <label htmlFor="phone" className="form-label">
@@ -91,6 +92,7 @@ function Form({ onCloseModal }) {
             required: 'Numarul de telefon este obligatoriu!',
           })}
         />
+        {errors.phone && <div>{errors.phone.message}</div>}
       </div>
       <div className="mb-4">
         <label htmlFor="email" className="form-label">
@@ -102,6 +104,7 @@ function Form({ onCloseModal }) {
           className="form-control"
           {...register('email', { required: 'Email-ul este obligatoriu!' })}
         />
+        {errors.email && <div>{errors.email.message}</div>}
       </div>
       <div className="mb-4">
         <label htmlFor="message" className="form-label">
