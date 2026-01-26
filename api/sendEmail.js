@@ -34,10 +34,21 @@ export default async function handler(req, res) {
     ? forwardedFor.split(',')[0].trim()
     : req.socket?.remoteAddress;
 
-  console.log('IP of user: ', ip);
+  // Calculate the time window
+  const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
 
-  // Validation
+  // Count how many submissions this IP made in the last 24 hours
+  const submissionsCount = await collection.countDocument({
+    ip,
+    createdAt: { $gte: twentyFourHoursAgo },
+  });
+
+  if (submissionsCount >= 2) {
+    return res.status(429).json({ status: 'Too many requests!' });
+  }
+
   if (!name || !phone || !email) {
+    // Validation
     return res.status(400).json({ status: 'Missing required fields!' });
   }
 
@@ -71,6 +82,8 @@ export default async function handler(req, res) {
 
   await collection.insertOne({
     ...body,
+    ip,
+    createAt: new Date(),
   });
 
   res.status(200).json({ success: true, message: 'Received data' });

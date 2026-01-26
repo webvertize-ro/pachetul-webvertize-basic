@@ -85,6 +85,7 @@ function Form({ onCloseModal }) {
       });
 
       const result = await res.json();
+      console.log('result is: ', result);
       setIsLoadding(false);
 
       if (!res.ok) {
