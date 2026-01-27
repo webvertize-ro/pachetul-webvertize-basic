@@ -6,7 +6,7 @@ function TooManyRequests() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!sessionStorage.get('tooManyRequests')) {
+    if (!sessionStorage.getItem('tooManyRequests')) {
       setAllowed(false);
       navigate('/');
       return;
