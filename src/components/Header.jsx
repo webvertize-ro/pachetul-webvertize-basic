@@ -8,6 +8,7 @@ import Modal from './Modal';
 const StyledHeader = styled.header`
   position: relative;
   margin-top: 3rem;
+  margin-bottom: 3rem;
   overflow: hidden;
 `;
 
