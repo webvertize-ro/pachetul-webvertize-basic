@@ -39,7 +39,7 @@ export default async function handler(req, res) {
 
   // Count how many submissions this IP made in the last 24 hours
   const submissionsCount = await collection.countDocuments({
-    ip,
+    ip: ip,
     createdAt: { $gte: twentyFourHoursAgo },
   });
 
