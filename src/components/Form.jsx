@@ -87,6 +87,7 @@ function Form({ onCloseModal }) {
       // if there are too many requests, redirect
 
       if (res.status === 429) {
+        sessionStorage.setItem('tooManyRequests', 'true');
         navigate('/too-many-requests');
       }
 
