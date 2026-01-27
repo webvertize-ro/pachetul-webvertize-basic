@@ -85,7 +85,7 @@ export default async function handler(req, res) {
   await collection.insertOne({
     ...body,
     ip,
-    createAt: new Date(),
+    createdAt: new Date(),
   });
 
   res.status(200).json({ success: true, message: 'Received data' });
