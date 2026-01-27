@@ -11,8 +11,7 @@ function TooManyRequests() {
       navigate('/');
       return;
     }
-
-    setAllowed(true);
+    sessionStorage.removeItem('tooManyRequests');
   }, []);
 
   if (!allowed) return null;
