@@ -1,15 +1,18 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 
 function TooManyRequests() {
   const [allowed, setAllowed] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!sessionStorage.get('tooManyRequests')) {
-      setAllowed(true);
+      setAllowed(false);
+      navigate('/');
       return;
     }
 
-    setAllowed(false);
+    setAllowed(true);
   }, []);
 
   if (!allowed) return null;
