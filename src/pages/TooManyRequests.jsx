@@ -5,8 +5,11 @@ function TooManyRequests() {
 
   useEffect(() => {
     if (!sessionStorage.get('tooManyRequests')) {
-      setAllowed(false);
+      setAllowed(true);
+      return;
     }
+
+    setAllowed(false);
   }, []);
 
   if (!allowed) return null;
