@@ -83,10 +83,15 @@ function Form({ onCloseModal }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-      console.log('res is: ', res);
+
+      // if there are too many requests, redirect
+
+      if (res.status === 429) {
+        navigate('/too-many-requests');
+      }
 
       const result = await res.json();
-      console.log('result is: ', result);
+
       setIsLoadding(false);
 
       if (!res.ok) {

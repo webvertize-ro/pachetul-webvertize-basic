@@ -5,6 +5,7 @@ import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import ThankYou from './pages/ThankYou';
+import TooManyRequests from './pages/TooManyRequests';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Route>
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/too-many-requests" element={<TooManyRequests />} />
         </Routes>
       </BrowserRouter>
     </div>
