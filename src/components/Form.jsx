@@ -83,6 +83,7 @@ function Form({ onCloseModal }) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
+      console.log('res is: ', res);
 
       const result = await res.json();
       console.log('result is: ', result);
