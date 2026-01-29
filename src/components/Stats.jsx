@@ -15,6 +15,11 @@ const StyledSection = styled.section`
   color: #fff;
 `;
 
+const StyledSectionTitle = styled.h2`
+  text-align: center;
+  padding-bottom: 0.75rem;
+`;
+
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   font-size: 1.6rem;
   color: #b09888;
@@ -53,6 +58,9 @@ function Stats() {
   return (
     <StyledSection className="stats" ref={sectionRef}>
       <div className="container">
+        <StyledSectionTitle>
+          Câteva cifre despre experiența noastră
+        </StyledSectionTitle>
         <div className="row my-6">
           <div className="col-md-4 col-sm-6 text-center">
             <div className="d-flex justify-content-center align-items-center gap-2">
