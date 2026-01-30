@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import Hero from '../components/Hero';
 import heroBg from '../assets/images/services-hero.jpg';
 import ServicesDetails from '../components/ServicesDetails';
+import TimelineHowWeWork from '../components/TimelineHowWeWork';
+import CTA from '../components/CTA';
 
 const StyledServices = styled.div`
   /* height: 650px; */
@@ -18,8 +20,17 @@ const StyledServices = styled.div`
 function Services() {
   return (
     <StyledServices>
-      <Hero heroBg={heroBg} />
+      <Hero
+        heroBg={heroBg}
+        heroTitle="Servicii de încredere, aproape de tine"
+        heroDesc="Punem la dispoziție o gamă variată de servicii, adaptate nevoilor tale, cu accent pe calitate, seriozitate și atenție la detalii."
+      />
       <ServicesDetails />
+      <TimelineHowWeWork />
+      <CTA
+        title="Ai un proiect în minte?"
+        text="Spune-ne ce îți dorești, iar noi te vom ajuta să găsești soluția potrivită pentru afacerea ta."
+      />
     </StyledServices>
   );
 }

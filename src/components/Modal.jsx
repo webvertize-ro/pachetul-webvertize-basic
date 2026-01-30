@@ -23,7 +23,7 @@ const StyledModal = styled.div`
     2.4rem 3.2rem rgba(0, 0, 0, 0.12);
   border-radius: 1rem;
   transition: all 0.5s;
-  z-index: 10001;
+  z-index: 91;
 
   @media (max-width: 576px) {
     width: 320px;
@@ -33,7 +33,7 @@ const StyledModal = styled.div`
 const Header = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   position: relative;
   padding: 1rem;
   border-bottom: 1px solid grey;
@@ -54,7 +54,7 @@ const Overlay = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
-  z-index: 1000;
+  z-index: 90;
   transition: all 0.5s;
 `;
 
@@ -105,10 +105,10 @@ function Open({ children, opens: opensWindowName }) {
   return cloneElement(children, { onClick: () => open(opensWindowName) });
 }
 
-function Window({ children, name }) {
+function Window({ children, name, title, lightboxOpen }) {
   const { openName, close } = useContext(ModalContext);
 
-  const ref = useOutsideClick(close);
+  const ref = useOutsideClick(lightboxOpen ? {} : close);
 
   if (name !== openName) return null;
 
@@ -116,7 +116,7 @@ function Window({ children, name }) {
     <Overlay>
       <StyledModal ref={ref}>
         <Header>
-          <StyledH4>Completează formularul</StyledH4>
+          <StyledH4>{title}</StyledH4>
           <Button onClick={close}>
             <FontAwesomeIcon icon={faXmark} />
           </Button>

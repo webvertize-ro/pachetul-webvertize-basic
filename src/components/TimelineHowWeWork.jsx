@@ -1,0 +1,76 @@
+import { fa1, faComment } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled from 'styled-components';
+import { timeline } from '../data/timeline';
+import TimelineItem from './TimelineItem';
+
+const StyledTimelineHowWeWork = styled.div`
+  padding: 3rem 0;
+  background-color: #1b3c53;
+  color: #fff;
+`;
+
+const HorizontalTimeline = styled.div`
+  position: relative;
+
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 1140px) {
+    border-top: 3px solid #e9ecef;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: stretch;
+    }
+  }
+`;
+
+const StyledH2 = styled.h2``;
+
+const StyledP = styled.p`
+  font-size: 1.2rem;
+`;
+
+const Row = styled.div`
+  @media (min-width: 1140px) {
+    margin-top: 4.5rem;
+  }
+`;
+
+function TimelineHowWeWork() {
+  return (
+    <StyledTimelineHowWeWork>
+      <div className="container py-5">
+        <StyledH2>Cum lucrăm</StyledH2>
+        <StyledP>
+          Un proces simplu, clar și ușor de urmărit, de la prima discuție până
+          la livrarea finală.
+        </StyledP>
+
+        <Row className="row">
+          <div className="col-lg-12">
+            <HorizontalTimeline className="horizontal-timeline">
+              <ul className="list-inline items">
+                {timeline.map((timeline, i) => (
+                  <TimelineItem
+                    iconNum={timeline.iconNum}
+                    icon={timeline.icon}
+                    title={timeline.title}
+                    desc={timeline.desc}
+                    CTAtext={timeline.CTAtext}
+                    btnLink={timeline.btnLink}
+                  />
+                ))}
+              </ul>
+            </HorizontalTimeline>
+          </div>
+        </Row>
+      </div>
+    </StyledTimelineHowWeWork>
+  );
+}
+
+export default TimelineHowWeWork;

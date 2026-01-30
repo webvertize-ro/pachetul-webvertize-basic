@@ -5,7 +5,7 @@ const StyledContact = styled.div`
 `;
 
 function Contact() {
-  return <StyledContact>This is the contact page!</StyledContact>;
+  return <StyledContact>This is the Contact page</StyledContact>;
 }
 
 export default Contact;

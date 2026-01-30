@@ -51,16 +51,13 @@ const Button = styled(Link)`
   padding: 1rem;
 `;
 
-function Hero({ heroBg }) {
+function Hero({ heroBg, heroTitle, heroDesc }) {
   return (
     <StyledHero heroBg={heroBg}>
       <div className="container">
         <TextContent>
-          <StyledH2>Servicii de încredere, aproape de tine</StyledH2>
-          <StyledP>
-            Punem la dispoziție o gamă variată de servicii, adaptate nevoilor
-            tale, cu accent pe calitate, seriozitate și atenție la detalii.
-          </StyledP>
+          <StyledH2>{heroTitle}</StyledH2>
+          <StyledP>{heroDesc}</StyledP>
           <Modal>
             <Modal.Open opens="form-modal">
               <Button>Cere o ofertă de preț</Button>

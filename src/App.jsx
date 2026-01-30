@@ -6,6 +6,8 @@ import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import ThankYou from './pages/ThankYou';
 import TooManyRequests from './pages/TooManyRequests';
+import 'yet-another-react-lightbox/styles.css';
+import 'yet-another-react-lightbox/plugins/captions.css';
 
 function App() {
   return (
