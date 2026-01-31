@@ -23,7 +23,7 @@ const StyledP = styled.p`
 
 const Item = styled.div`
   background-color: #7fa5b8;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 0.75rem;
 `;
 
@@ -36,9 +36,9 @@ function ReasonsToChooseUs() {
           Clienții noștri apreciază calitatea serviciilor și atenția la detalii.
           Iată câteva motive pentru care aleg să colaboreze cu noi:
         </StyledP>
-        <div className="row d-flex gap-3">
+        <div className="row d-flex gap-2">
           {reasonsToChooseUs.map((reason) => (
-            <Item className="col-md-5">
+            <Item className="col-12">
               {console.log(reason)}
               <CustomizableItem
                 title={reason.title}

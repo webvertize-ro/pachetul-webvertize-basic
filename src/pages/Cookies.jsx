@@ -3,6 +3,7 @@ import Accordion from '../components/Accordion';
 import Hero from '../components/Hero';
 import cookiesImg from '../assets/images/cookies-img.jpg';
 import CookiesInfoSection from '../components/CookiesInfoSection';
+import { useEffect } from 'react';
 
 const StyledCookies = styled.div``;
 
@@ -14,6 +15,10 @@ const StyledCookies = styled.div``;
  */
 
 function Cookies() {
+  useEffect(() => {
+    document.title = 'Afacere Locală | Politica de cookies';
+  }, []);
+
   return (
     <StyledCookies>
       <Hero

@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import contactImg from '../assets/images/contact-img.jpg';
 import ContactSection from '../components/ContactSection';
 import CTA from '../components/CTA';
+import { useEffect } from 'react';
 
 const StyledContact = styled.div`
   /* height: 650px; */
@@ -15,6 +16,10 @@ const StyledContact = styled.div`
  */
 
 function Contact() {
+  useEffect(() => {
+    document.title = 'Afacere Locală | Contact';
+  }, []);
+
   return (
     <StyledContact>
       <Hero

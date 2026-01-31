@@ -2,8 +2,19 @@ import styled from 'styled-components';
 import Modal from './Modal';
 import ProjectModal from './ProjectModal';
 import Lightbox from 'yet-another-react-lightbox';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { Captions } from 'yet-another-react-lightbox/plugins';
+
+const StyledProjectsCard = styled.div`
+  background-color: #7fa5b8;
+  border-radius: 1rem;
+  color: #142b3e;
+`;
+
+const StyledImg = styled.img`
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+`;
 
 const StyledButton = styled.button`
   border: none;
@@ -35,8 +46,8 @@ function ProjectsCard({
   });
 
   return (
-    <div className="card">
-      <img src={topImg} className="card-img-top" alt="..." />
+    <StyledProjectsCard className="card">
+      <StyledImg src={topImg} className="card-img-top" alt="..." />
       <div className="card-body d-flex flex-column">
         <h5 className="card-title">{projectTitle}</h5>
         <p className="card-text">{projectShortDesc}</p>
@@ -66,7 +77,7 @@ function ProjectsCard({
           slides={slides}
         />
       </div>
-    </div>
+    </StyledProjectsCard>
   );
 }
 

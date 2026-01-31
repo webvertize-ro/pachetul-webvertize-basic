@@ -4,6 +4,7 @@ import portfolioHeroImg from '../assets/images/portfolio-hero.jpg';
 import Projects from '../components/Projects';
 import ReasonsToChooseUs from '../components/ReasonsToChooseUs';
 import CTA from '../components/CTA';
+import { useEffect } from 'react';
 
 const StyledPortfolio = styled.div`
   /* height: 650px; */
@@ -18,6 +19,10 @@ const StyledPortfolio = styled.div`
  */
 
 function Portfolio() {
+  useEffect(() => {
+    document.title = 'Afacere Locală | Portofoliu';
+  }, []);
+
   return (
     <StyledPortfolio>
       <Hero

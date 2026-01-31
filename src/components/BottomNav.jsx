@@ -10,6 +10,7 @@ import progrm from '../data/program.json';
 import { useState } from 'react';
 
 const StyledBottomNav = styled.div`
+  display: none;
   @media (max-width: 576px) {
     display: flex;
     justify-content: space-around;
@@ -22,7 +23,7 @@ const StyledBottomNav = styled.div`
     right: 0;
     width: 100%;
     padding: 1rem;
-    z-index: 9999;
+    z-index: 99;
   }
 `;
 

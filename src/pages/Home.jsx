@@ -7,10 +7,15 @@ import splitSectionPic2 from '../assets/images/split_section_pic2.jpg';
 import WhyWorkWithUs from '../components/WhyWorkWithUs';
 import Testimonials from '../components/Testimonials';
 import ShortServices from '../components/ShortServices';
+import { useEffect } from 'react';
 
 const StyledHome = styled.div``;
 
 function Home() {
+  useEffect(() => {
+    document.title = 'Afacere Locală | Acasă';
+  }, []);
+
   return (
     /**
      *  Page structure

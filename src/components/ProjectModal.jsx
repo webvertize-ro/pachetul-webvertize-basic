@@ -27,7 +27,7 @@ function ProjectModal({
   return (
     <StyledProjectModal>
       <div className="container">
-        <div className="row">
+        <div className="row d-flex align-items-center">
           <div className="col-md-6">
             <div className="row">
               {imageGallery.map((img, i) => (

@@ -9,11 +9,13 @@ import TooManyRequests from './pages/TooManyRequests';
 import 'yet-another-react-lightbox/styles.css';
 import 'yet-another-react-lightbox/plugins/captions.css';
 import Cookies from './pages/Cookies';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <div>
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route element={<AppLayout />}>
             <Route path="/" element={<Home />} />

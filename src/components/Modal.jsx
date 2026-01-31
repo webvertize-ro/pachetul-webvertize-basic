@@ -54,7 +54,7 @@ const Overlay = styled.div`
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(4px);
-  z-index: 90;
+  z-index: 100;
   transition: all 0.5s;
 `;
 
@@ -105,7 +105,7 @@ function Open({ children, opens: opensWindowName }) {
   return cloneElement(children, { onClick: () => open(opensWindowName) });
 }
 
-function Window({ children, name, title, lightboxOpen }) {
+function Window({ children, name, title = 'Solicită o ofertă', lightboxOpen }) {
   const { openName, close } = useContext(ModalContext);
 
   const ref = useOutsideClick(lightboxOpen ? {} : close);

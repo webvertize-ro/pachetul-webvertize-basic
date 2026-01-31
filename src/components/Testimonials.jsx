@@ -43,7 +43,7 @@ function Testimonials() {
       </div>
 
       <StyledTestimonialsContainer className="container">
-        <div className="row">
+        <div className="row d-flex justify-content-center">
           {testimonials.map((t, index) => (
             <div
               key={index}

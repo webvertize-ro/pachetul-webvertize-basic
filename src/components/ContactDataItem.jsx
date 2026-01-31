@@ -5,7 +5,7 @@ const StyledContactDataItem = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  background-color: #2e5368;
+  background-color: #142b3e;
   padding: 1rem;
   border-radius: 0.75rem;
 `;

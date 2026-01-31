@@ -4,6 +4,7 @@ import heroBg from '../assets/images/services-hero.jpg';
 import ServicesDetails from '../components/ServicesDetails';
 import TimelineHowWeWork from '../components/TimelineHowWeWork';
 import CTA from '../components/CTA';
+import { useEffect } from 'react';
 
 const StyledServices = styled.div`
   /* height: 650px; */
@@ -18,6 +19,10 @@ const StyledServices = styled.div`
   4. CTA 
  */
 function Services() {
+  useEffect(() => {
+    document.title = 'Afacere Locală | Servicii';
+  }, []);
+
   return (
     <StyledServices>
       <Hero

@@ -19,6 +19,11 @@ const StyledHero = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  @media (max-width: 576px) {
+    text-align: center;
+    padding: 2rem 0;
+  }
 `;
 
 const TextContent = styled.div`
@@ -33,12 +38,20 @@ const TextContent = styled.div`
 const StyledH2 = styled.h2`
   font-size: 2.5rem;
   font-weight: 600;
+
+  @media (max-width: 576px) {
+    font-size: 2rem;
+  }
 `;
 
 const StyledP = styled.p`
   font-size: 1.4rem;
   text-align: center;
   max-width: 920px;
+
+  @media (max-width: 576px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Button = styled(Link)`
@@ -49,6 +62,10 @@ const Button = styled(Link)`
   font-weight: 500;
   border-radius: 0.75rem;
   padding: 1rem;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 function Hero({ heroBg, heroTitle, heroDesc }) {
