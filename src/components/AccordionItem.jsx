@@ -1,56 +1,58 @@
+import { fa1 } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useState } from 'react';
 import styled from 'styled-components';
 
-const StyledAccordionItem = styled.div`
-  background-color: #7fa5b8 !important;
-`;
-
-const StyledAccordionButton = styled.button`
-  background-color: #7fa5b8;
+const Question = styled.div`
   color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #7fa5b8;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  gap: 0.75rem;
+  border-left: ${(props) => (props.isOpen ? '5px solid #142B3E' : 'unset')};
 `;
 
-const AccordionBody = styled.div`
-  background-color: #fff;
+const QuestionNumber = styled.div`
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
 `;
 
-function AccordionItem({ question, answer, index, links }) {
+const QuestionText = styled.div`
+  font-size: 1.25rem;
+`;
+
+const StyledAccordionItem = styled.div`
+  background-color: #2e5368;
+  border-radius: 0.75rem;
+`;
+
+const QuestionAnswer = styled.div`
+  color: #fff;
+  padding: 1rem;
+  font-size: 1.1rem;
+`;
+
+function AccordionItem({ question, answer, index, curOpen, onCurOpen }) {
+  const isOpen = curOpen === index;
+
+  function handleToggle() {
+    onCurOpen(isOpen ? null : index);
+  }
+
   return (
-    <StyledAccordionItem className="accordion-item">
-      <h2 className="accordion-header" id="headingOne">
-        <StyledAccordionButton
-          className="accordion-button collapsed"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target={`#collapse-${index}`}
-          aria-expanded="false"
-          aria-controls={`collapse-${index}`}
-        >
-          {question}
-        </StyledAccordionButton>
-      </h2>
-      <div
-        id={`collapse-${index}`}
-        className="accordion-collapse collapse"
-        aria-labelledby="headingOne"
-        data-bs-parent="#accordionExample"
-      >
-        <AccordionBody className="accordion-body">
-          {answer}{' '}
-          {links ? (
-            <ul>
-              {links.map((link) => (
-                <li>
-                  <a href={link} target="_blank">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            ''
-          )}
-        </AccordionBody>
-      </div>
+    <StyledAccordionItem isOpen={isOpen}>
+      <Question onClick={() => handleToggle()} isOpen={isOpen}>
+        <QuestionNumber>{index}</QuestionNumber>
+        <QuestionText>{question}</QuestionText>
+      </Question>
+      {isOpen && <QuestionAnswer>{answer}</QuestionAnswer>}
     </StyledAccordionItem>
   );
 }
