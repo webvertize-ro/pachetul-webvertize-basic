@@ -57,7 +57,7 @@ const Button1 = styled(Link)`
   text-decoration: none;
   background-color: #1b3c53;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   border-radius: 0.75rem;
   padding: 1rem;
 `;
@@ -67,7 +67,7 @@ const Button2 = styled(Link)`
   background-color: transparent;
   border: 1px solid #1b3c53;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   border-radius: 0.75rem;
   padding: 1rem;
   transition: all 0.3s ease;

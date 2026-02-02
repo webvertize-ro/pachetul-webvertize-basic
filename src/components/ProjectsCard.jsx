@@ -16,6 +16,16 @@ const StyledImg = styled.img`
   border-top-right-radius: 1rem;
 `;
 
+const StyledH5 = styled.h5`
+  font-weight: 600;
+  color: #fff;
+`;
+
+const StyledP = styled.p`
+  font-size: 1.25rem;
+  color: #fff;
+`;
+
 const StyledButton = styled.button`
   border: none;
   text-decoration: none;
@@ -49,8 +59,8 @@ function ProjectsCard({
     <StyledProjectsCard className="card">
       <StyledImg src={topImg} className="card-img-top" alt="..." />
       <div className="card-body d-flex flex-column">
-        <h5 className="card-title">{projectTitle}</h5>
-        <p className="card-text">{projectShortDesc}</p>
+        <StyledH5 className="card-title">{projectTitle}</StyledH5>
+        <StyledP className="card-text">{projectShortDesc}</StyledP>
         <Modal>
           <Modal.Open opens={`project-${projectTitle}`}>
             <StyledButton className="stretched-link">Vezi detalii</StyledButton>

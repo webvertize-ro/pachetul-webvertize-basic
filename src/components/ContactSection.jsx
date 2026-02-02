@@ -12,13 +12,14 @@ const StyledContactSection = styled.div`
 `;
 
 const StyledH2 = styled.h2`
+  font-size: 2.2rem;
   font-weight: 600;
   color: #fff;
 `;
 
 const StyledP = styled.p`
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
 `;
 
 const Row = styled.div`
@@ -49,7 +50,8 @@ const Item = styled.div`
 const StyledButton = styled.button`
   background-color: #2e5368;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
   border-radius: 0.75rem;
   padding: 1rem;
   border: none;

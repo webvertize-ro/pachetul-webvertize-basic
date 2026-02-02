@@ -16,6 +16,8 @@ const StyledSection = styled.section`
 `;
 
 const StyledSectionTitle = styled.h2`
+  font-size: 2.2rem;
+  font-weight: 600;
   text-align: center;
   padding-bottom: 0.75rem;
 `;

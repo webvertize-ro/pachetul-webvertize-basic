@@ -58,7 +58,7 @@ const Button = styled(Link)`
   text-decoration: none;
   background-color: #142b3e;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 500;
   border-radius: 0.75rem;
   padding: 1rem;

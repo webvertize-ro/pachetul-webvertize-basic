@@ -5,6 +5,8 @@ import ServicesDetails from '../components/ServicesDetails';
 import TimelineHowWeWork from '../components/TimelineHowWeWork';
 import CTA from '../components/CTA';
 import { useEffect } from 'react';
+import { images } from '../data/gallery2';
+import PhotoGallery from '../components/PhotoGallery';
 
 const StyledServices = styled.div`
   /* height: 650px; */
@@ -32,9 +34,15 @@ function Services() {
       />
       <ServicesDetails />
       <TimelineHowWeWork />
+      <PhotoGallery
+        title="Serviciile noastre, în imagini"
+        text="O selecție de imagini care ilustrează modul în care oferim serviciile noastre și atenția acordată fiecărui proiect."
+        images={images}
+      />
       <CTA
         title="Ai un proiect în minte?"
         text="Spune-ne ce îți dorești, iar noi te vom ajuta să găsești soluția potrivită pentru afacerea ta."
+        bgColor="green"
       />
     </StyledServices>
   );

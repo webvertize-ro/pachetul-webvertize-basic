@@ -15,13 +15,14 @@ const StyledTestimonials = styled.section`
 `;
 
 const TestimonialsHeading = styled.h2`
+  font-size: 2.2rem;
   margin-bottom: 0;
   font-weight: 600;
 `;
 
 const TestimonialsSubtitle = styled.p`
   margin-bottom: 0;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 500;
 `;
 

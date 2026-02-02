@@ -27,8 +27,13 @@ const TextContent = styled.div`
   z-index: 10;
 `;
 
+const StyledH2 = styled.h2`
+  font-size: 2.2rem;
+  font-weight: 600;
+`;
+
 const StyledP = styled.p`
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   font-weight: 500;
   text-align: center;
 `;
@@ -37,7 +42,8 @@ const StyledButton = styled.button`
   border: none;
   background-color: #1b3c53;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
   border-radius: 0.75rem;
   padding: 0.75rem;
 `;
@@ -53,7 +59,7 @@ function CTA({
         <div className="row">
           <div className="col-lg-8 offset-lg-2">
             <TextContent>
-              <h2 className="lh-base">{title}</h2>
+              <StyledH2 className="lh-base">{title}</StyledH2>
               <StyledP>{text}</StyledP>
               <Modal>
                 <Modal.Open opens="form-modal">

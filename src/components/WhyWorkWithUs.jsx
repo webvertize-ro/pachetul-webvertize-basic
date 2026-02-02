@@ -41,7 +41,8 @@ const StyledImg = styled.img`
 `;
 
 const StyledTitle = styled.h2`
-  font-weight: 800;
+  font-size: 2.2rem;
+  font-weight: 600;
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
@@ -56,9 +57,9 @@ const ListItem = styled.li`
 
 const StyledP = styled.p`
   margin: 0;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   text-align: justify;
-  font-weight: 500;
+  font-weight: 300;
 `;
 
 const StyledButton = styled.button`
@@ -66,7 +67,8 @@ const StyledButton = styled.button`
   padding: 0.75rem;
   background-color: #000;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
+  font-weight: 500;
   border-radius: 0.75rem;
 `;
 

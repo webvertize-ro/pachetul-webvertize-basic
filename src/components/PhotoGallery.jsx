@@ -1,0 +1,114 @@
+import { useState } from 'react';
+import styled from 'styled-components';
+import Lightbox from 'yet-another-react-lightbox';
+import { Captions } from 'yet-another-react-lightbox/plugins';
+
+const StyledPhotoGallery = styled.div`
+  padding: 3rem 0;
+  background-color: #3a6a84;
+  color: #fff;
+`;
+
+const StyledImg = styled.img`
+  border-radius: 1rem;
+  height: 100%;
+  width: 100%;
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+
+  transition: all 0.3s ease;
+
+  @media (min-width: 576px) {
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.02);
+    }
+    &:hover .img-caption {
+      opacity: 1;
+    }
+  }
+`;
+
+const ImageCaption = styled.div`
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+`;
+
+const StyledH2 = styled.h2`
+  font-size: 2.2rem;
+  font-weight: 600;
+`;
+
+const StyledP = styled.p`
+  font-size: 1.25rem;
+  font-weight: 300;
+`;
+
+function PhotoGallery({ title, text, images }) {
+  const [open, setOpen] = useState(false);
+  const [indexImg, setIndexImg] = useState(0);
+
+  const slides = images.map((i) => {
+    return {
+      src: i.img,
+      title: i.title,
+    };
+  });
+
+  return (
+    <>
+      <StyledPhotoGallery>
+        <div className="container">
+          <StyledH2>{title}</StyledH2>
+          <StyledP>{text}</StyledP>
+          <div className="row">
+            {slides.map((img, i) => (
+              <ImageContainer className="col-md-4 mb-4" key={i}>
+                <StyledImg
+                  src={img.src}
+                  className="img-fluid"
+                  onClick={() => {
+                    setOpen(true);
+                    setIndexImg(i);
+                  }}
+                />
+                <ImageCaption
+                  className="img-caption"
+                  onClick={() => {
+                    setOpen(true);
+                    setIndexImg(i);
+                  }}
+                >
+                  {img.title}
+                </ImageCaption>
+              </ImageContainer>
+            ))}
+          </div>
+        </div>
+      </StyledPhotoGallery>
+      <Lightbox
+        plugins={[Captions]}
+        index={indexImg}
+        open={open}
+        close={() => setOpen(false)}
+        slides={slides}
+      />
+    </>
+  );
+}
+
+export default PhotoGallery;

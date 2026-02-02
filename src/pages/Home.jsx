@@ -8,6 +8,8 @@ import WhyWorkWithUs from '../components/WhyWorkWithUs';
 import Testimonials from '../components/Testimonials';
 import ShortServices from '../components/ShortServices';
 import { useEffect } from 'react';
+import PhotoGallery from '../components/PhotoGallery';
+import { images } from '../data/gallery1.js';
 
 const StyledHome = styled.div``;
 
@@ -30,6 +32,11 @@ function Home() {
     <StyledHome>
       <SplitSection btn1Path="/portfolio" />
       <Stats />
+      <PhotoGallery
+        title="Galerie foto din activitatea noastră"
+        text="Descoperă câteva imagini care surprind modul în care lucrăm, proiectele realizate și atenția pe care o acordăm fiecărui detaliu."
+        images={images}
+      />
       <ShortServices />
       <OurPartners />
       <WhyWorkWithUs />

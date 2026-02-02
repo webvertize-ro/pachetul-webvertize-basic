@@ -12,13 +12,14 @@ const StyledWhatRecommendsUs = styled.div`
 `;
 
 const StyledH2 = styled.h2`
+  font-size: 2.2rem;
   font-weight: 600;
   color: #fff;
 `;
 
 const StyledP = styled.p`
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
 `;
 
 const Item = styled.div`

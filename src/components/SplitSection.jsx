@@ -58,6 +58,10 @@ const HeaderContent = styled.div`
   }
 `;
 
+const StyledH1 = styled.h1`
+  font-weight: 600;
+`;
+
 const ShortIntro = styled.p`
   margin-bottom: 1.5rem;
   font-size: 1.25rem;
@@ -69,7 +73,7 @@ const Button1 = styled(Link)`
   text-decoration: none;
   background-color: #000;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   font-weight: 500;
   border-radius: 0.75rem;
   padding: 1rem;
@@ -81,7 +85,7 @@ const Button2 = styled(Link)`
   border: 1px solid #fff;
   color: #fff;
   font-weight: 500;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   border-radius: 0.75rem;
   padding: 1rem;
   transition: all 0.3s ease;
@@ -119,7 +123,7 @@ function SplitSection({
         >
           <HeaderContent className="col-lg-6">
             <div className="mt-6">
-              <h1 className="xl-text">{heading}</h1>
+              <StyledH1 className="xl-text">{heading}</StyledH1>
               <ShortIntro>{shortIntro}</ShortIntro>
               <div className="d-flex gap-2">
                 <Button1 to={btn1Path}>{btn1}</Button1>

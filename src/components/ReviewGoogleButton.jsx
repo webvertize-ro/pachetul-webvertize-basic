@@ -11,7 +11,8 @@ const StyledReviewGoogleButton = styled.a`
   background-color: #1b3c53;
   border-radius: 0.75rem;
   color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  font-weight: 500;
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`

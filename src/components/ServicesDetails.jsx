@@ -12,10 +12,13 @@ const StyledServicesDetails = styled.div`
 
 const Services = styled.div``;
 
-const StyledH2 = styled.h2``;
+const StyledH2 = styled.h2`
+  font-size: 2.2rem;
+  font-weight: 600;
+`;
 
 const StyledP = styled.p`
-  font-size: 1.2rem;
+  font-size: 1.25rem;
 `;
 
 function ServicesDetails() {
