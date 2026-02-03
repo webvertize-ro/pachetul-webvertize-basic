@@ -6,6 +6,16 @@ const StyledCookiesInfoSection = styled.div`
   padding: 3rem 0;
   background-color: #2c5870;
   color: #fff;
+
+  @media (max-width: 576px) {
+    padding: 1.5rem 0;
+  }
+`;
+
+const StyledH3 = styled.h3`
+  @media (max-width: 576px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const StyledLink = styled.a`
@@ -15,6 +25,10 @@ const StyledLink = styled.a`
 
 const StyledP = styled.p`
   font-size: 1.2rem;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 const Date = styled.span`
@@ -25,10 +39,10 @@ function CookiesInfoSection() {
   return (
     <StyledCookiesInfoSection>
       <div className="container">
-        <h3 className="d-flex gap-2 align-items-center">
+        <StyledH3 className="d-flex gap-2 align-items-center">
           <FontAwesomeIcon icon={faInfoCircle} />
           Informații suplimentare și actualizări
-        </h3>
+        </StyledH3>
         <StyledP>
           Această pagină a fost actualizată ultima dată la{' '}
           <Date>30 ianuarie 2026</Date>.

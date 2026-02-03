@@ -22,10 +22,18 @@ const QuestionNumber = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1.1rem;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 const QuestionText = styled.div`
   font-size: 1.25rem;
+
+  @media (max-width: 576px) {
+    font-size: 1.1rem;
+  }
 `;
 
 const StyledAccordionItem = styled.div`
@@ -37,6 +45,10 @@ const QuestionAnswer = styled.div`
   color: #fff;
   padding: 1rem;
   font-size: 1.1rem;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 function AccordionItem({ question, answer, index, curOpen, onCurOpen }) {

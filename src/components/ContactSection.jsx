@@ -9,22 +9,41 @@ const StyledContactSection = styled.div`
   padding: 3rem 0;
   background-color: #1b3c53;
   color: #fff;
+
+  @media (max-width: 576px) {
+    padding: 1.5rem 0;
+  }
 `;
 
 const StyledH2 = styled.h2`
   font-size: 2.2rem;
   font-weight: 600;
   color: #fff;
+
+  @media (max-width: 576px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const StyledP = styled.p`
   color: #fff;
   font-size: 1.25rem;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+    text-align: center;
+  }
 `;
 
 const Row = styled.div`
   @media (max-width: 992px) {
     gap: 1.5rem;
+  }
+`;
+
+const LeftSide = styled.div`
+  @media (max-width: 576px) {
+    gap: 0.75rem;
   }
 `;
 
@@ -58,6 +77,10 @@ const StyledButton = styled.button`
   width: 50%;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 function ContactSection() {
@@ -70,7 +93,7 @@ function ContactSection() {
           minte.
         </StyledP>
         <Row className="row d-flex">
-          <div className="col-md-6 d-flex flex-column justify-content-center gap-3">
+          <LeftSide className="col-md-6 d-flex flex-column">
             {contact.map((c) => (
               <ContactDataItem
                 link={c.link}
@@ -87,7 +110,7 @@ function ContactSection() {
                 <Form />
               </Modal.Window>
             </Modal>
-          </div>
+          </LeftSide>
           <div className="col-md-6 d-flex justify-content-center">
             <StyledIFrame
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d91160.57954789398!2d26.012237353149644!3d44.43791870157616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1f93abf3cad4f%3A0xac0632e37c9ca628!2sBucharest!5e0!3m2!1sen!2sro!4v1769760750337!5m2!1sen!2sro"

@@ -6,11 +6,19 @@ import { useState } from 'react';
 const StyledAccordion = styled.div`
   padding: 3rem 0;
   background-color: #1b3c53;
+
+  @media (max-width: 576px) {
+    padding: 1.5rem 0;
+  }
 `;
 
 const StyledH2 = styled.h2`
   font-weight: 600;
   color: #fff;
+
+  @media (max-width: 576px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const StyledP = styled.p`

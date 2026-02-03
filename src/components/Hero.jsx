@@ -40,7 +40,7 @@ const StyledH2 = styled.h2`
   font-weight: 600;
 
   @media (max-width: 576px) {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 `;
 
@@ -50,7 +50,7 @@ const StyledP = styled.p`
   max-width: 920px;
 
   @media (max-width: 576px) {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 `;
 
