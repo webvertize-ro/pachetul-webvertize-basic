@@ -13,8 +13,11 @@ const StyledTimelineItem = styled.li`
   display: flex;
   flex-direction: column;
   padding-bottom: 1rem;
-  &:not(:last-child) {
-    border-bottom: 1px solid #fff;
+
+  @media (max-width: 576px) {
+    &:not(:last-child) {
+      border-bottom: 1px solid #fff;
+    }
   }
 
   @media (min-width: 1140px) {
@@ -108,11 +111,7 @@ function TimelineItem({ iconNum, icon, title, desc, CTAtext, btnLink }) {
       <TimelineButton>
         <Modal>
           <Modal.Open opens="form-modal">
-            {btnLink ? (
-              <StyledLink to={btnLink}>Vezi proiecte</StyledLink>
-            ) : (
-              <StyledButton>{CTAtext}</StyledButton>
-            )}
+            <StyledButton>{CTAtext}</StyledButton>
           </Modal.Open>
           <Modal.Window name="form-modal">
             <Form />

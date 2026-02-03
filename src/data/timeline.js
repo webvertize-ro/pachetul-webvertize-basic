@@ -15,7 +15,7 @@ export const timeline = [
     icon: faComment,
     title: 'Discuție inițială',
     desc: 'Discutăm despre nevoile tale, obiectivele afacerii și așteptările pe care le ai, pentru a înțelege exact ce îți dorești.',
-    CTAtext: 'Hai să discutăm',
+    CTAtext: 'Cere o ofertă',
   },
   {
     iconNum: fa2,
@@ -29,15 +29,13 @@ export const timeline = [
     icon: faComment,
     title: 'Implementare',
     desc: 'Ne apucăm de lucru și transformăm planul stabilit în realitate, cu atenție la detalii și comunicare constantă.',
-    CTAtext: 'Vezi proiecte',
-    btnLink: '/portfolio',
+    CTAtext: 'Cere o ofertă',
   },
   {
     iconNum: fa4,
     icon: faHeadset,
     title: 'Finalizare și suport',
     desc: 'Livrăm proiectul final și rămânem alături de tine pentru ajustări, suport și întrebări ulterioare.',
-    CTAtext: 'Contactează-ne',
-    btnLink: '/contact',
+    CTAtext: 'Cere o ofertă',
   },
 ];
