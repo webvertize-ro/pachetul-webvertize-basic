@@ -8,6 +8,10 @@ const StyledTimelineHowWeWork = styled.div`
   padding: 3rem 0;
   background-color: #1b3c53;
   color: #fff;
+
+  @media (max-width: 576px) {
+    padding: 1.5rem 0;
+  }
 `;
 
 const HorizontalTimeline = styled.div`
@@ -46,7 +50,7 @@ const Row = styled.div`
 function TimelineHowWeWork() {
   return (
     <StyledTimelineHowWeWork>
-      <div className="container py-5">
+      <div className="container">
         <StyledH2>Cum lucrăm</StyledH2>
         <StyledP>
           Un proces simplu, clar și ușor de urmărit, de la prima discuție până

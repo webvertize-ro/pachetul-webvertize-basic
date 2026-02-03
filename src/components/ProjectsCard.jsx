@@ -19,11 +19,19 @@ const StyledImg = styled.img`
 const StyledH5 = styled.h5`
   font-weight: 600;
   color: #fff;
+
+  @media (max-width: 576px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const StyledP = styled.p`
   font-size: 1.25rem;
   color: #fff;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -36,6 +44,10 @@ const StyledButton = styled.button`
   border-radius: 0.75rem;
   padding: 1rem;
   margin-top: auto;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 function ProjectsCard({

@@ -8,6 +8,10 @@ const StyledServicesDetails = styled.div`
   padding: 3rem 0;
   background-color: #3a6a84;
   color: #fff;
+
+  @media (max-width: 576px) {
+    padding: 1.5rem 0;
+  }
 `;
 
 const Services = styled.div``;
@@ -15,10 +19,18 @@ const Services = styled.div``;
 const StyledH2 = styled.h2`
   font-size: 2.2rem;
   font-weight: 600;
+
+  @media (max-width: 576px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const StyledP = styled.p`
   font-size: 1.25rem;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 function ServicesDetails() {

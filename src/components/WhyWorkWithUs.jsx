@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import Form from './Form';
 import Modal from './Modal';
+import reasons from '../data/reasons.json';
 
 const StyledSection = styled.section`
   padding: 3rem 0;
@@ -21,6 +22,11 @@ const StyledSection = styled.section`
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
   }
+
+  @media (max-width: 576px) {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 `;
 
 const DecorationStarLeft = styled.img`
@@ -36,14 +42,26 @@ const StyledImg = styled.img`
   border-radius: 1.5rem;
 
   @media (max-width: 576px) {
-    max-width: 300px;
+    max-width: 275px;
   }
 `;
 
 const StyledTitle = styled.h2`
   font-size: 2.2rem;
   font-weight: 600;
+
+  @media (max-width: 576px) {
+    font-size: 1.6rem;
+  }
 `;
+
+const StyledTextContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const StyledUl = styled.ul``;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
   font-size: 1.5rem;
@@ -60,6 +78,14 @@ const StyledP = styled.p`
   font-size: 1.25rem;
   text-align: justify;
   font-weight: 300;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
+`;
+
+const StyledStrong = styled.strong`
+  font-weight: 700;
 `;
 
 const StyledButton = styled.button`
@@ -70,6 +96,10 @@ const StyledButton = styled.button`
   font-size: 1.25rem;
   font-weight: 500;
   border-radius: 0.75rem;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 function WhyWorkWithUs() {
@@ -86,48 +116,22 @@ function WhyWorkWithUs() {
             </div>
           </div>
           <div className="col-lg-6">
-            <div className="mt-4">
+            <StyledTextContent className="mt-4">
               <StyledTitle className="mb-4">
                 De ce să alegi serviciile{' '}
                 <span className="text-primary">afacerii noastre</span>
               </StyledTitle>
-              <ul className="list-unstyled">
-                <ListItem className="d-flex mb-3">
-                  <StyledFontAwesomeIcon icon={faCheck} />
-                  <StyledP>
-                    <strong>Experiență și profesionalism: </strong>
-                    Lucrăm organizat și atent la detalii, cu focus pe soluții
-                    bine făcute și rezultate durabile.
-                  </StyledP>
-                </ListItem>
-
-                <ListItem className="d-flex mb-3">
-                  <StyledFontAwesomeIcon icon={faCheck} />
-                  <StyledP>
-                    <strong>Comunicare clară și transparentă: </strong>
-                    Știi mereu la ce să te aștepți. Fără promisiuni vagi, fără
-                    costuri ascunse.
-                  </StyledP>
-                </ListItem>
-
-                <ListItem className="d-flex mb-3">
-                  <StyledFontAwesomeIcon icon={faCheck} />
-                  <StyledP>
-                    <strong>Soluții adaptate nevoilor tale: </strong>
-                    Fiecare proiect este diferit, iar noi tratăm fiecare
-                    colaborare cu atenție și flexibilitate.
-                  </StyledP>
-                </ListItem>
-
-                <ListItem className="d-flex mb-3">
-                  <StyledFontAwesomeIcon icon={faCheck} />
-                  <StyledP>
-                    <strong>Accent pe calitate și încredere: </strong>
-                    Construim relații pe termen lung, bazate pe seriozitate și
-                    respect față de clienți.
-                  </StyledP>
-                </ListItem>
-              </ul>
+              <StyledUl className="list-unstyled">
+                {reasons.map((reason) => (
+                  <ListItem className="d-flex mb-3">
+                    <StyledFontAwesomeIcon icon={faCheck} />
+                    <StyledP>
+                      <StyledStrong>{reason.strong}: </StyledStrong>
+                      {reason.desc}
+                    </StyledP>
+                  </ListItem>
+                ))}
+              </StyledUl>
               <Modal>
                 <Modal.Open opens="form-modal">
                   <StyledButton>Obține o ofertă de preț</StyledButton>
@@ -136,7 +140,7 @@ function WhyWorkWithUs() {
                   <Form />
                 </Modal.Window>
               </Modal>
-            </div>
+            </StyledTextContent>
           </div>
         </div>
       </div>

@@ -5,17 +5,29 @@ import ProjectsCard from './ProjectsCard';
 const StyledProjects = styled.div`
   padding: 5rem 0;
   background-color: #2c5870;
+
+  @media (max-width: 576px) {
+    padding: 1.5rem 0;
+  }
 `;
 
 const StyledH2 = styled.h2`
   font-size: 2.2rem;
   font-weight: 600;
   color: #fff;
+
+  @media (max-width: 576px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const StyledP = styled.p`
   color: #fff;
   font-size: 1.25rem;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 function Projects() {

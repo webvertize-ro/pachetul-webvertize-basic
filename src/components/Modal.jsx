@@ -39,10 +39,15 @@ const Header = styled.div`
   border-bottom: 1px solid grey;
 `;
 
+const ModalContent = styled.div`
+  max-height: 550px;
+  overflow-y: scroll;
+`;
+
 const StyledH4 = styled.h4`
   margin: 0;
   @media (max-width: 576px) {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 `;
 
@@ -122,7 +127,9 @@ function Window({ children, name, title = 'Solicită o ofertă', lightboxOpen })
           </Button>
         </Header>
 
-        <div>{cloneElement(children, { onCloseModal: close })}</div>
+        <ModalContent>
+          {cloneElement(children, { onCloseModal: close })}
+        </ModalContent>
       </StyledModal>
     </Overlay>,
     document.body,

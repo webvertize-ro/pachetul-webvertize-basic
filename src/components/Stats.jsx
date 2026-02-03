@@ -13,6 +13,10 @@ const StyledSection = styled.section`
   padding: 2rem;
   background-color: #2d5775;
   color: #fff;
+
+  @media (max-width: 576px) {
+    padding: 1.2rem;
+  }
 `;
 
 const StyledSectionTitle = styled.h2`
@@ -20,6 +24,10 @@ const StyledSectionTitle = styled.h2`
   font-weight: 600;
   text-align: center;
   padding-bottom: 0.75rem;
+
+  @media (max-width: 576px) {
+    font-size: 1.75rem;
+  }
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`

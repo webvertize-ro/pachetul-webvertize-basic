@@ -13,6 +13,10 @@ const StyledReviewGoogleButton = styled.a`
   color: #fff;
   font-size: 1.25rem;
   font-weight: 500;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`

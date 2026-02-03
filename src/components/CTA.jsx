@@ -20,6 +20,10 @@ const StyledCTA = styled.div`
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 9;
   }
+
+  @media (max-width: 576px) {
+    padding: 1.5rem;
+  }
 `;
 
 const TextContent = styled.div`
@@ -30,12 +34,20 @@ const TextContent = styled.div`
 const StyledH2 = styled.h2`
   font-size: 2.2rem;
   font-weight: 600;
+
+  @media (max-width: 576px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const StyledP = styled.p`
   font-size: 1.25rem;
   font-weight: 500;
   text-align: center;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -46,6 +58,10 @@ const StyledButton = styled.button`
   font-weight: 500;
   border-radius: 0.75rem;
   padding: 0.75rem;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 function CTA({

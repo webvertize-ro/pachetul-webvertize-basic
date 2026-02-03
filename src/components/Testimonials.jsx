@@ -12,18 +12,34 @@ const StyledTestimonials = styled.section`
   align-items: center;
   gap: 3rem;
   background-color: #7fa5b8;
+
+  @media (max-width: 576px) {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 `;
 
 const TestimonialsHeading = styled.h2`
   font-size: 2.2rem;
   margin-bottom: 0;
   font-weight: 600;
+  color: #fff;
+
+  @media (max-width: 576px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const TestimonialsSubtitle = styled.p`
   margin-bottom: 0;
   font-size: 1.25rem;
   font-weight: 500;
+  color: #fff;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
 `;
 
 const StyledTestimonialsContainer = styled.div`
@@ -31,6 +47,10 @@ const StyledTestimonialsContainer = styled.div`
   /* flex-direction: column; */
   align-items: stretch;
   gap: 1.25rem;
+`;
+
+const StyledRow = styled.div`
+  gap: 1.5rem;
 `;
 
 function Testimonials() {
@@ -44,7 +64,7 @@ function Testimonials() {
       </div>
 
       <StyledTestimonialsContainer className="container">
-        <div className="row d-flex justify-content-center">
+        <StyledRow className="row d-flex justify-content-center">
           {testimonials.map((t, index) => (
             <div
               key={index}
@@ -59,7 +79,7 @@ function Testimonials() {
               <TestimonialContent content={t.testimonial_content} />
             </div>
           ))}
-        </div>
+        </StyledRow>
       </StyledTestimonialsContainer>
       <ReviewGoogleButton />
     </StyledTestimonials>

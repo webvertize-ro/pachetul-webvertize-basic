@@ -7,6 +7,10 @@ const StyledPhotoGallery = styled.div`
   padding: 3rem 0;
   background-color: #3a6a84;
   color: #fff;
+
+  @media (max-width: 576px) {
+    padding: 1.5rem;
+  }
 `;
 
 const StyledImg = styled.img`
@@ -16,7 +20,7 @@ const StyledImg = styled.img`
 `;
 
 const ImageContainer = styled.div`
-  position: relative;
+  /* position: relative; */
 
   transition: all 0.3s ease;
 
@@ -28,6 +32,11 @@ const ImageContainer = styled.div`
     &:hover .img-caption {
       opacity: 1;
     }
+  }
+
+  @media (max-width: 576px) {
+    padding: 0.2rem;
+    margin-bottom: 0 !important;
   }
 `;
 
@@ -51,11 +60,19 @@ const ImageCaption = styled.div`
 const StyledH2 = styled.h2`
   font-size: 2.2rem;
   font-weight: 600;
+
+  @media (max-width: 576px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const StyledP = styled.p`
   font-size: 1.25rem;
   font-weight: 300;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 function PhotoGallery({ title, text, images }) {
@@ -77,7 +94,7 @@ function PhotoGallery({ title, text, images }) {
           <StyledP>{text}</StyledP>
           <div className="row">
             {slides.map((img, i) => (
-              <ImageContainer className="col-md-4 mb-4" key={i}>
+              <ImageContainer className="col-4 col-md-4 mb-4" key={i}>
                 <StyledImg
                   src={img.src}
                   className="img-fluid"

@@ -6,6 +6,10 @@ const StyledCounter = styled.div`
   font-size: 2.5rem;
   color: #fff;
   margin-bottom: 0;
+
+  @media (max-width: 576px) {
+    font-size: 2rem;
+  }
 `;
 
 function Counter({ target, start, duration = 2000 }) {

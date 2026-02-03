@@ -46,6 +46,10 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 const StyledH4 = styled.h4`
   font-weight: 600;
   text-align: center;
+
+  @media (max-width: 576px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const StyledP = styled.p`

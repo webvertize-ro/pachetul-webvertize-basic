@@ -13,7 +13,9 @@ const StyledTimelineItem = styled.li`
   display: flex;
   flex-direction: column;
   padding-bottom: 1rem;
-  border-bottom: 1px solid white;
+  &:not(:last-child) {
+    border-bottom: 1px solid #fff;
+  }
 
   @media (min-width: 1140px) {
     padding-top: 45px;

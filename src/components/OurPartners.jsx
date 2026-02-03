@@ -1,22 +1,24 @@
 import styled from 'styled-components';
-import partnerLogo1 from '../assets/images/partner-logo-1.png';
-import partnerLogo2 from '../assets/images/partner-logo-2.png';
-import partnerLogo3 from '../assets/images/partner-logo-3.png';
-import partnerLogo4 from '../assets/images/partner-logo-4.png';
-import partnerLogo5 from '../assets/images/partner-logo-5.png';
-import partnerLogo6 from '../assets/images/partner-logo-6.png';
+import { partners } from '../data/partners.js';
 
 const StyledSection = styled.section`
   background-color: #1b3c53;
   color: #fff;
   padding: 2.5rem;
+
+  @media (max-width: 576px) {
+    padding: 1.75rem;
+  }
 `;
 
 const PartnerItem = styled.div`
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid #fff;
   padding-bottom: 0.75rem;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #fff;
+  }
 `;
 
 function OurPartners() {
@@ -25,21 +27,11 @@ function OurPartners() {
       <div className="container">
         <h6 className="text-center mb-4 text-uppercase">Partenerii noștri</h6>
         <div className="row d-flex gap-5 justify-content-center">
-          <PartnerItem className="col-sm-4 col-md-2">
-            <img src={partnerLogo1} alt="" className="mx-4" />
-          </PartnerItem>
-          <PartnerItem className="col-sm-4 col-md-2">
-            <img src={partnerLogo2} alt="" className="mx-4" />
-          </PartnerItem>
-          <PartnerItem className="col-sm-4 col-md-2">
-            <img src={partnerLogo3} alt="" className="mx-4" />
-          </PartnerItem>
-          <PartnerItem className="col-sm-4 col-md-2">
-            <img src={partnerLogo4} alt="" className="mx-4" />
-          </PartnerItem>
-          <PartnerItem className="col-sm-4 col-md-2">
-            <img src={partnerLogo5} alt="" className="mx-4" />
-          </PartnerItem>
+          {partners.map((partner) => (
+            <PartnerItem>
+              <img src={partner.img} alt="test" />
+            </PartnerItem>
+          ))}
         </div>
       </div>
     </StyledSection>

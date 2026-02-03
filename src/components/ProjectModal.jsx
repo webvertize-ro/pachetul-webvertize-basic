@@ -6,6 +6,21 @@ import 'yet-another-react-lightbox/styles.css';
 
 const StyledProjectModal = styled.div`
   padding: 2rem;
+
+  @media (max-width: 576px) {
+    padding: 0.5rem;
+  }
+`;
+
+const Row = styled.div`
+  display: flex;
+`;
+
+const ImgContainer = styled.div`
+  @media (max-width: 576px) {
+    margin-bottom: 0.75rem !important;
+    padding: 0 0.5rem;
+  }
 `;
 
 const StyledImg = styled.img`
@@ -13,8 +28,21 @@ const StyledImg = styled.img`
   border: 2px solid #142b3e;
 `;
 
+const StyledH3 = styled.h3`
+  font-size: 1.2rem;
+
+  @media (max-width: 576px) {
+    text-align: center;
+  }
+`;
+
 const StyledP = styled.p`
   text-align: justify;
+  font-size: 0.9rem;
+
+  @media (max-width: 576px) {
+    text-align: center;
+  }
 `;
 
 function ProjectModal({
@@ -27,11 +55,11 @@ function ProjectModal({
   return (
     <StyledProjectModal>
       <div className="container">
-        <div className="row d-flex align-items-center">
+        <Row className="row d-flex align-items-center">
           <div className="col-md-6">
             <div className="row">
               {imageGallery.map((img, i) => (
-                <div className="col-md-6 mb-4" key={img}>
+                <ImgContainer className="col-6 col-md-6" key={img}>
                   <StyledImg
                     src={img.src}
                     className="img-fluid"
@@ -40,15 +68,15 @@ function ProjectModal({
                       onIndexImage(i);
                     }}
                   />
-                </div>
+                </ImgContainer>
               ))}
             </div>
           </div>
           <div className="col-md-6">
-            <h3>Detalii proiect</h3>
+            <StyledH3>Detalii proiect</StyledH3>
             <StyledP>{projectLongDesc}</StyledP>
           </div>
-        </div>
+        </Row>
       </div>
     </StyledProjectModal>
   );

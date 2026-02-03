@@ -11,6 +11,11 @@ const StyledShortServices = styled.div`
   padding-bottom: 3rem;
   background-color: #7fa5b8;
   color: #fff;
+
+  @media (max-width: 576px) {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 `;
 
 const Row = styled.div`
@@ -22,6 +27,10 @@ const Row = styled.div`
 const StyledH2 = styled.h2`
   font-size: 2.2rem;
   font-weight: 600;
+
+  @media (max-width: 576px) {
+    font-size: 1.6rem;
+  }
 `;
 
 const StyledP = styled.p`
@@ -29,6 +38,10 @@ const StyledP = styled.p`
   font-size: 1.25rem;
   font-weight: 300;
   text-align: justify;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledUl = styled.ul`
@@ -51,6 +64,10 @@ const StyledLi = styled.li`
   padding: 0.25rem 0.75rem;
   border-radius: 0.5rem;
   cursor: default;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 const Button1 = styled(Link)`
@@ -60,6 +77,11 @@ const Button1 = styled(Link)`
   font-size: 1.25rem;
   border-radius: 0.75rem;
   padding: 1rem;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
 `;
 
 const Button2 = styled(Link)`
@@ -76,6 +98,11 @@ const Button2 = styled(Link)`
     background-color: #1b3c53;
     color: #fff;
   }
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
 `;
 
 const StyledImg = styled.img`
@@ -83,7 +110,7 @@ const StyledImg = styled.img`
   border-radius: 1.5rem;
 
   @media (max-width: 576px) {
-    max-width: 300px;
+    max-width: 275px;
   }
 `;
 
@@ -128,7 +155,7 @@ function ShortServices() {
                 Proiecte personalizate
               </StyledLi>
             </StyledUl>
-            <div className="d-flex gap-2">
+            <div className="d-flex justify-content-center align-items-center gap-2">
               <Button1 to="/services">Află mai multe</Button1>
               <Modal>
                 <Modal.Open opens="form-modal">

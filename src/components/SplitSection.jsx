@@ -22,6 +22,11 @@ const StyledHeader = styled.header`
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
+
+  @media (max-width: 576px) {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
 `;
 
 const DecorationLeft = styled.img`
@@ -60,6 +65,11 @@ const HeaderContent = styled.div`
 
 const StyledH1 = styled.h1`
   font-weight: 600;
+
+  @media (max-width: 576px) {
+    text-align: center;
+    font-size: 1.75rem;
+  }
 `;
 
 const ShortIntro = styled.p`
@@ -67,6 +77,11 @@ const ShortIntro = styled.p`
   font-size: 1.25rem;
   font-weight: 300;
   text-align: justify;
+
+  @media (max-width: 576px) {
+    font-size: 1.1rem;
+    text-align: center;
+  }
 `;
 
 const Button1 = styled(Link)`
@@ -77,6 +92,11 @@ const Button1 = styled(Link)`
   font-weight: 500;
   border-radius: 0.75rem;
   padding: 1rem;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
 `;
 
 const Button2 = styled(Link)`
@@ -94,6 +114,11 @@ const Button2 = styled(Link)`
     background-color: #000;
     border: 1px solid #000;
   }
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+    padding: 0.5rem;
+  }
 `;
 
 const HeaderBusinessPic = styled.img`
@@ -101,7 +126,7 @@ const HeaderBusinessPic = styled.img`
   border-radius: 1.5rem;
 
   @media (max-width: 576px) {
-    max-width: 300px;
+    max-width: 275px;
   }
 `;
 
@@ -125,7 +150,7 @@ function SplitSection({
             <div className="mt-6">
               <StyledH1 className="xl-text">{heading}</StyledH1>
               <ShortIntro>{shortIntro}</ShortIntro>
-              <div className="d-flex gap-2">
+              <div className="d-flex gap-2 justify-content-center">
                 <Button1 to={btn1Path}>{btn1}</Button1>
 
                 <Modal>
