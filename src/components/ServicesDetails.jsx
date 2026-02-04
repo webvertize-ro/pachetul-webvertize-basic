@@ -58,7 +58,7 @@ function ServicesDetails() {
         <Services className="row">
           {services.map((service, i) => {
             return (
-              <div key={i} className="col-sm-4 col-md-6 mb-4">
+              <div key={i} className="col-sm-4 col-md-4 mb-4">
                 <Card
                   title={service.title}
                   text={service.text}
