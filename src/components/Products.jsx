@@ -8,6 +8,34 @@ const StyledProducts = styled.div`
   background-color: #2c5870;
 `;
 
+const StyledH2 = styled.h2`
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #fff;
+
+  @media (max-width: 576px) {
+    font-size: 1.6rem;
+  }
+
+  @media (min-width: 576px) and (max-width: 992px) {
+    text-align: center;
+  }
+`;
+
+const StyledP = styled.p`
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: #fff;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 576px) and (max-width: 992px) {
+    text-align: center;
+  }
+`;
+
 const Row = styled.div`
   display: flex;
 `;
@@ -16,6 +44,11 @@ function Products() {
   return (
     <StyledProducts>
       <div className="container">
+        <StyledH2>Produsele noastre</StyledH2>
+        <StyledP>
+          Produsele noastre sunt alese și configurate pentru a oferi soluții
+          eficiente și fiabile clienților noștri.
+        </StyledP>
         <Row className="row">
           {products.map((product) => (
             <div className="col-12 col-sm-6 col-md-4 mb-3">

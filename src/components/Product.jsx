@@ -12,6 +12,8 @@ const StyledProduct = styled.div`
 
 const Card = styled.div`
   height: 100%;
+  background-color: #1b3c53 !important;
+  color: #fff;
 `;
 
 const StyledImg = styled.img`

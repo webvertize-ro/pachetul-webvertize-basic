@@ -26,6 +26,7 @@ const ImgContainer = styled.div`
 const StyledImg = styled.img`
   border-radius: 0.75rem;
   border: 2px solid #142b3e;
+  cursor: pointer;
 `;
 
 const StyledH3 = styled.h3`
@@ -55,11 +56,11 @@ function ProjectModal({
   return (
     <StyledProjectModal>
       <div className="container">
-        <Row className="row d-flex align-items-center">
-          <div className="col-md-6">
+        <Row className="row d-flex">
+          <div className="col-lg-6">
             <div className="row">
               {imageGallery.map((img, i) => (
-                <ImgContainer className="col-6 col-md-6" key={img}>
+                <ImgContainer className="col-6 col-md-6 mb-3" key={img}>
                   <StyledImg
                     src={img.src}
                     className="img-fluid"
@@ -72,7 +73,7 @@ function ProjectModal({
               ))}
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-lg-6">
             <StyledH3>Detalii proiect</StyledH3>
             <StyledP>{projectLongDesc}</StyledP>
           </div>
