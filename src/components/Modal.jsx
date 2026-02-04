@@ -49,7 +49,7 @@ const ModalContent = styled.div`
 const StyledH4 = styled.h4`
   margin: 0;
   @media (max-width: 576px) {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 `;
 

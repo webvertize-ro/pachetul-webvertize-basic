@@ -20,6 +20,14 @@ const StyledImg = styled.img`
 
 const Row = styled.div`
   padding: 3rem;
+
+  @media (max-width: 576px) {
+    padding: 1rem;
+  }
+
+  @media (min-width: 576px) and (max-width: 992px) {
+    padding: 2rem;
+  }
 `;
 
 const ImgContainer = styled.div``;
@@ -28,6 +36,15 @@ const StyledImgModal = styled.img`
   max-width: 350px;
   border-radius: 1rem;
   cursor: pointer;
+
+  @media (max-width: 576px) {
+    max-width: 250px;
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 576px) and (max-width: 992px) {
+    margin-bottom: 1rem;
+  }
 `;
 
 const CardBody = styled.div`
@@ -48,7 +65,11 @@ const StyledLink = styled.a`
   cursor: pointer;
 `;
 
-const StyledH4 = styled.h4``;
+const StyledH4 = styled.h4`
+  @media (max-width: 576px) {
+    font-size: 1.2rem;
+  }
+`;
 
 const StyledUl = styled.ul`
   list-style: none;
@@ -63,6 +84,10 @@ const LiItem = styled.li`
   gap: 0.5rem;
   border-radius: 1rem;
   font-size: 1.1rem;
+
+  @media (max-width: 576px) {
+    font-size: 1rem;
+  }
 `;
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
@@ -101,7 +126,7 @@ function Product({ product }) {
             </Modal.Open>
             <Modal.Window name="form-modal" title={product.product_title}>
               <Row className="row">
-                <div className="col-md-6 d-flex align-items-center justify-content-center">
+                <div className="col-lg-6 d-flex align-items-center justify-content-center">
                   <ImgContainer>
                     <StyledImgModal
                       src={product.img}
@@ -110,7 +135,7 @@ function Product({ product }) {
                     />
                   </ImgContainer>
                 </div>
-                <div className="col-md-6">
+                <div className="col-lg-6">
                   <StyledH4>Specificații produs</StyledH4>
                   <StyledUl>
                     {product.features.map((feature) => (
