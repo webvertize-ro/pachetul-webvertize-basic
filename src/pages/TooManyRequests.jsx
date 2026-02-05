@@ -29,7 +29,7 @@ const StyledButton = styled(Link)`
   text-decoration: none;
   border: none;
   padding: 0.75rem;
-  background-color: #2e5368;
+  background-color: #1b3c53;
   color: #fff;
   border-radius: 0.5rem;
   font-size: 1.1rem;
