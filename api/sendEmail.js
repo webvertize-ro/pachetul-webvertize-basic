@@ -8,6 +8,7 @@ export default async function handler(req, res) {
 
   const { name, phone, email, message, cf_turnstile_token } = req.body;
 
+  // Turnstile validation
   const responseToken = await fetch(
     'https://challenges.cloudflare.com/turnstile/v0/siteverify',
     {
@@ -51,8 +52,6 @@ export default async function handler(req, res) {
     // Validation
     return res.status(400).json({ status: 'Missing required fields!' });
   }
-
-  // Turnstile validation
 
   // Sending the email
   const transporter = nodemailer.createTransport({

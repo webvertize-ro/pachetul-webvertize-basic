@@ -7,11 +7,28 @@ export default async function handler(req, res) {
 
   console.log('req.body is: ', req.body);
 
-  const { name, phone, message } = req.body;
+  const { name, phone, message, cf_turnstile_token } = req.body;
 
   // Validation
   if (!name || !phone) {
     return res.status(400).json({ status: 'Missing required fields!' });
+  }
+
+  // Turnstile validation
+  const responseToken = await fetch(
+    'https://challenges.cloudflare.com/turnstile/v0/siteverify',
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({
+        secret: process.env.TURNSTILE_SECRET,
+        response: cf_turnstile_token,
+      }),
+    },
+  );
+
+  if (!responseToken.success) {
+    return res.status(400).json({ error: 'CAPTCHA verification failed!' });
   }
 
   // Send an email
