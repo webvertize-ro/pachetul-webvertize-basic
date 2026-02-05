@@ -13,7 +13,7 @@ const StyledForm = styled.form`
 `;
 
 const ErrorMsg = styled.div`
-  color: red;
+  color: #f16a6a;
 `;
 
 const StyledButton = styled.button`
