@@ -11,6 +11,7 @@ import 'yet-another-react-lightbox/plugins/captions.css';
 import Cookies from './pages/Cookies';
 import ScrollToTop from './components/ScrollToTop';
 import NotFound from './pages/NotFound';
+import LandingPage from './pages/LandingPage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           </Route>
           <Route path="/thank-you" element={<ThankYou />} />
           <Route path="/too-many-requests" element={<TooManyRequests />} />
+          <Route path="/landingPage" element={<LandingPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
