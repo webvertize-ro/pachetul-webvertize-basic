@@ -12,6 +12,10 @@ const StyledForm = styled.form`
   color: #fff;
 `;
 
+const ErrorMsg = styled.div`
+  color: red;
+`;
+
 const StyledButton = styled.button`
   border: none;
   background-color: #7fa5b8;
@@ -23,6 +27,8 @@ const StyledButton = styled.button`
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  display: flex;
+  justify-content: center;
 `;
 
 function FormLandingPage() {
@@ -113,6 +119,7 @@ function FormLandingPage() {
           placeholder="Ion Popescu"
           {...register('name', { required: 'Numele este obligatoriu!' })}
         />
+        {errors.name && <ErrorMsg>{errors.name.message}</ErrorMsg>}
       </div>
       <div className="mb-3">
         <label htmlFor="phone" className="form-label">
@@ -127,6 +134,7 @@ function FormLandingPage() {
             required: 'Numărul de telefon este obligatoriu!',
           })}
         />
+        {errors.phone && <ErrorMsg>{errors.phone.message}</ErrorMsg>}
       </div>
       <div className="mb-3">
         <label htmlFor="message" className="form-label">
