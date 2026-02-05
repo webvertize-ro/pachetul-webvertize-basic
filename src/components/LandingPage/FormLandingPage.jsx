@@ -20,6 +20,9 @@ const StyledButton = styled.button`
   border-radius: 0.5rem;
   width: 100%;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 `;
 
 function FormLandingPage() {
@@ -133,8 +136,8 @@ function FormLandingPage() {
         ></div>
       </div>
       <StyledButton type="submit">
-        {loading ? <LoadingSpinner /> : ''}
-        {loading ? 'Se trimite...' : 'Trimite'}
+        <div>{loading ? <LoadingSpinner /> : ''}</div>
+        <div>{loading ? 'Se trimite...' : 'Trimite'}</div>
       </StyledButton>
     </StyledForm>
   );
