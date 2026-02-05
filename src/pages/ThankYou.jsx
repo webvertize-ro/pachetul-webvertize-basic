@@ -10,6 +10,7 @@ const StyledThankYou = styled.div`
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
+  background-color: #2e5368;
 `;
 
 const StyledP = styled.p`
@@ -19,13 +20,14 @@ const StyledP = styled.p`
   text-align: center;
   margin-bottom: 0;
   padding-bottom: 0;
+  color: #fff;
 `;
 
 const StyledButton = styled(Link)`
   text-decoration: none;
   border: none;
   padding: 0.75rem;
-  background-color: #234c6a;
+  background-color: #7fa5b8;
   color: #fff;
   border-radius: 0.5rem;
   font-size: 1.1rem;
