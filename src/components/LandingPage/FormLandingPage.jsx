@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
@@ -28,6 +28,7 @@ const StyledButton = styled.button`
 function FormLandingPage() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const turnstileRef = useRef(null);
 
   const {
     register,
@@ -55,7 +56,7 @@ function FormLandingPage() {
   useEffect(() => {
     if (!window.turnstile) return;
 
-    window.turnstile.render('.cf-turnstile', {
+    window.turnstile.render(turnstileRef.current, {
       sitekey: '0x4AAAAAACREehtKVoDrzPyF',
       callback: onTurnstileSuccess,
     });
@@ -130,6 +131,7 @@ function FormLandingPage() {
       </div>
       <div className="mb-2">
         <div
+          ref={turnstileRef}
           className="cf-turnstile"
           data-theme="light"
           data-size="normal"
