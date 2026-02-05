@@ -14,6 +14,7 @@ const StyledForm = styled.form`
 
 const ErrorMsg = styled.div`
   color: #f16a6a;
+  font-weight: 500;
 `;
 
 const StyledButton = styled.button`
