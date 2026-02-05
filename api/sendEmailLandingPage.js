@@ -24,7 +24,7 @@ export default async function handler(req, res) {
   });
 
   await transporter.sendMail({
-    from: `Solicitare formular de la ${name}`,
+    from: `Solicitare formular de la ${process.env.SMTP_USER}`,
     to: process.env.RECEIVING_EMAIL,
     subject: `Solicitare formular de la ${name}`,
     html: `
