@@ -41,6 +41,8 @@ const ErrorMsg = styled.div`
   color: #8a0000;
 `;
 
+const CfTurnstile = styled.div``;
+
 function Form({ onCloseModal }) {
   const [isLoadaing, setIsLoadding] = useState(false);
 
@@ -168,12 +170,12 @@ function Form({ onCloseModal }) {
         />
       </div>
       {/* Turnstile Widget */}
-      <div className="mb-2">
-        <div
+      <div className="mb-2 d-flex justify-content-center">
+        <CfTurnstile
           className="cf-turnstile"
           data-theme="light"
           data-size="normal"
-        ></div>
+        ></CfTurnstile>
       </div>
       <FormButtons>
         <SubmitButton type="submit">

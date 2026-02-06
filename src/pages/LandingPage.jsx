@@ -2,10 +2,10 @@ import CTAOffer from '../components/LandingPage/CTAOffer';
 import Hero from '../components/LandingPage/Hero';
 import ProblemSolution from '../components/LandingPage/ProblemSolution';
 import LeadCapture from '../components/LandingPage/LeadCapture';
-import StickyCTA from '../components/LandingPage/StyickyCTA';
 import landingImg from '../assets/images/landing_img.jpg';
 import Footer from '../components/LandingPage/Footer';
 import CTACall from '../components/LandingPage/CTACall';
+import StickyButtons from '../components/LandingPage/StickyButtons';
 
 function LandingPage() {
   return (
@@ -19,7 +19,7 @@ function LandingPage() {
       <LeadCapture />
       <CTACall />
       <ProblemSolution />
-      <StickyCTA />
+      <StickyButtons />
       <Footer />
     </div>
   );

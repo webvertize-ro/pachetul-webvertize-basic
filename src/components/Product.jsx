@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import Modal from './Modal';
-import Form from './Form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
@@ -82,20 +81,6 @@ const StyledUl = styled.ul`
   padding: 0;
 `;
 
-const StyledButton = styled.button`
-  border: none;
-  text-decoration: none;
-  font-size: 1.1rem;
-  color: #fff;
-  padding: 1.2rem;
-  border-radius: 0.75rem;
-  margin-top: auto;
-  background-color: #2e5368;
-  display: flex;
-  justify-content: center;
-  cursor: pointer;
-`;
-
 const LiItem = styled.li`
   display: flex;
   gap: 0.5rem;
@@ -167,14 +152,6 @@ function Product({ product }) {
                     ))}
                   </StyledUl>
                 </div>
-                <Modal>
-                  <Modal.Open opens="form-modal2">
-                    <StyledButton>Cere o ofertă</StyledButton>
-                  </Modal.Open>
-                  <Modal.Window name="form-modal2" lightboxOpen={lightboxOpen}>
-                    <Form />
-                  </Modal.Window>
-                </Modal>
               </Row>
             </Modal.Window>
           </Modal>
