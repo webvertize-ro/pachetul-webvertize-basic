@@ -16,6 +16,7 @@ const StyledButton = styled.button`
   border: none;
   width: 100%;
   justify-content: center;
+  flex: 1;
 `;
 
 function RequestAnOfferBtn() {

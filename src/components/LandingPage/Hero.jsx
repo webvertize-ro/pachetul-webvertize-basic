@@ -86,6 +86,13 @@ const Button = styled(Link)`
   }
 `;
 
+const ActionButtons = styled.div`
+  @media (max-width: 576px) {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
 function Hero({ img, title, subtitle }) {
   return (
     <StyledHero img={img}>
@@ -94,14 +101,10 @@ function Hero({ img, title, subtitle }) {
           <StyledH2>{title}</StyledH2>
           <StyledP>{subtitle}</StyledP>
           <Rating />
-          <div className="row d-flex justify-content-center align-items-center">
-            <div className="col-lg-6 mb-2">
-              <CallNowBtn />
-            </div>
-            <div className="col-lg-6">
-              <RequestAnOfferBtn />
-            </div>
-          </div>
+          <ActionButtons className="d-flex gap-2">
+            <CallNowBtn />
+            <RequestAnOfferBtn />
+          </ActionButtons>
         </TextContent>
       </div>
     </StyledHero>
