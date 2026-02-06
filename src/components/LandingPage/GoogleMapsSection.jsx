@@ -3,6 +3,10 @@ import styled from 'styled-components';
 const StyledGoogleMapsSection = styled.div`
   background-color: #142b3e;
   padding: 3rem 0;
+
+  @media (max-width: 576px) {
+    padding: 1.5rem 0;
+  }
 `;
 
 const TextContent = styled.div`

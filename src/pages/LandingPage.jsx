@@ -7,6 +7,7 @@ import Footer from '../components/LandingPage/Footer';
 import CTACall from '../components/LandingPage/CTACall';
 import StickyButtons from '../components/LandingPage/StickyButtons';
 import GoogleMapsSection from '../components/LandingPage/GoogleMapsSection';
+import StreetView from '../components/LandingPage/StreetView';
 
 function LandingPage() {
   return (
@@ -22,6 +23,7 @@ function LandingPage() {
       <ProblemSolution />
       <StickyButtons />
       <GoogleMapsSection />
+      <StreetView />
       <Footer />
     </div>
   );
