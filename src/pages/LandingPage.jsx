@@ -6,6 +6,7 @@ import landingImg from '../assets/images/landing_img.jpg';
 import Footer from '../components/LandingPage/Footer';
 import CTACall from '../components/LandingPage/CTACall';
 import StickyButtons from '../components/LandingPage/StickyButtons';
+import GoogleMapsSection from '../components/LandingPage/GoogleMapsSection';
 
 function LandingPage() {
   return (
@@ -20,6 +21,7 @@ function LandingPage() {
       <CTACall />
       <ProblemSolution />
       <StickyButtons />
+      <GoogleMapsSection />
       <Footer />
     </div>
   );
