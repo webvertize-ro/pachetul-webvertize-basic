@@ -46,7 +46,7 @@ function ThankYou() {
       return;
     }
 
-    // clean sessionStorage, such that if the page was accessed correctly to not work on refresh
+    // clean sessionStorage (prevent from loading on refresh)
     sessionStorage.removeItem('formFilledOut');
     setAllowed(true);
   }, [navigate]);

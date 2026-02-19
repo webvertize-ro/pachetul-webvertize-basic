@@ -36,6 +36,25 @@ const StyledButton = styled(Link)`
 `;
 
 function TooManyRequests() {
+  const navigate = useNavigate();
+
+  const [allowed, setAllowed] = useState(false);
+
+  useEffect(() => {
+    // check sessionStorage
+    const tooManyRequests = sessionStorage.getItem('tooManyRequests');
+    if (!tooManyRequests) {
+      navigate('/');
+      return;
+    }
+
+    // clean sessionStorage (prevent from loading on refresh)
+    sessionStorage.removeItem('tooManyRequests');
+    setAllowed(true);
+  }, [navigate]);
+
+  if (!allowed) return null;
+
   return (
     <StyledTooManyRequests>
       <Logo />
@@ -48,7 +67,7 @@ function TooManyRequests() {
         Dacă este o urgență, ne puteți contacta direct la numărul de telefon
         0712345678. Mulțumim pentru înțelegere!
       </StyledP>
-      <StyledButton>Înapoi la pagina principală</StyledButton>
+      <StyledButton to="/">Înapoi la pagina principală</StyledButton>
     </StyledTooManyRequests>
   );
 }
