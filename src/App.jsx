@@ -12,26 +12,37 @@ import Cookies from './pages/Cookies';
 import ScrollToTop from './components/ScrollToTop';
 import NotFound from './pages/NotFound';
 import LandingPage from './pages/LandingPage';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 0,
+    },
+  },
+});
 
 function App() {
   return (
     <div>
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
-          <Route element={<AppLayout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/cookies" element={<Cookies />} />
-          </Route>
-          <Route path="/thank-you" element={<ThankYou />} />
-          <Route path="/too-many-requests" element={<TooManyRequests />} />
-          <Route path="/landingPage" element={<LandingPage />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <ScrollToTop />
+          <Routes>
+            <Route element={<AppLayout />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/cookies" element={<Cookies />} />
+            </Route>
+            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/too-many-requests" element={<TooManyRequests />} />
+            <Route path="/landingPage" element={<LandingPage />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </QueryClientProvider>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
-import { products } from '../data/products';
 import Product from './Product';
+import { useContent } from '../hooks/useContent';
+import { c } from '../utils/content';
 
 const StyledProducts = styled.div`
   padding-top: 3rem;
@@ -40,14 +41,24 @@ const Row = styled.div`
 `;
 
 function Products() {
+  const { contentMap } = useContent();
+  const products = [1, 2, 3, 4, 5, 6]
+    .map((n) => ({
+      image: c(contentMap, `services.product_${n}_image`),
+      title: c(contentMap, `services.product_${n}_title`),
+      description: c(contentMap, `services.product_${n}_description`),
+      button_text: c(contentMap, `services.product_${n}_button_text`),
+      specs: [1, 2, 3, 4, 5]
+        .map((s) => c(contentMap, `services.product_${n}_spec_${s}`))
+        .filter(Boolean),
+    }))
+    .filter((item) => item.title);
+
   return (
     <StyledProducts>
       <div className="container">
-        <StyledH2>Produsele noastre</StyledH2>
-        <StyledP>
-          Produsele noastre sunt alese și configurate pentru a oferi soluții
-          eficiente și fiabile clienților noștri.
-        </StyledP>
+        <StyledH2>{c(contentMap, 'services.products_title')}</StyledH2>
+        <StyledP>{c(contentMap, 'services.products_description')}</StyledP>
         <Row className="row">
           {products.map((product) => (
             <div className="col-12 col-sm-6 col-md-4 mb-3">

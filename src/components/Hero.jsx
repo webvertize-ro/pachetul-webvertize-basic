@@ -2,6 +2,8 @@ import Modal from './Modal';
 import styled from 'styled-components';
 import Form from './Form';
 import { Link } from 'react-router';
+import { useContent } from '../hooks/useContent';
+import { c } from '../utils/content';
 
 const StyledHero = styled.div`
   background-image: url(${(props) => props.heroBg});
@@ -80,7 +82,7 @@ const Button = styled(Link)`
   }
 `;
 
-function Hero({ heroBg, heroTitle, heroDesc }) {
+function Hero({ heroBg, heroTitle, heroDesc, btnTxt }) {
   return (
     <StyledHero heroBg={heroBg}>
       <div className="container">
@@ -90,7 +92,7 @@ function Hero({ heroBg, heroTitle, heroDesc }) {
           {heroTitle !== 'Politica noastră privind cookie-urile' && (
             <Modal>
               <Modal.Open opens="form-modal">
-                <Button>Cere o ofertă de preț</Button>
+                <Button>{btnTxt}</Button>
               </Modal.Open>
               <Modal.Window name="form-modal">
                 <Form />

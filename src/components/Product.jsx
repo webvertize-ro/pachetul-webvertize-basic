@@ -17,9 +17,11 @@ const Card = styled.div`
 
 const StyledImg = styled.img`
   max-height: 275px;
+  object-fit: cover;
 `;
 
 const Row = styled.div`
+  display: flex;
   padding: 3rem;
   /* gap: 1rem; */
 
@@ -31,8 +33,6 @@ const Row = styled.div`
     padding: 2rem;
   }
 `;
-
-const ImgContainer = styled.div``;
 
 const StyledImgModal = styled.img`
   max-width: 350px;
@@ -46,6 +46,19 @@ const StyledImgModal = styled.img`
 
   @media (min-width: 576px) and (max-width: 992px) {
     margin-bottom: 1rem;
+  }
+`;
+
+const ModalContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 5rem;
+  gap: 1rem;
+
+  @media (max-width: 992px) {
+    flex-direction: column;
+    padding: 1rem 2rem;
   }
 `;
 
@@ -65,12 +78,6 @@ const StyledLink = styled.a`
   display: flex;
   justify-content: center;
   cursor: pointer;
-`;
-
-const StyledH4 = styled.h4`
-  @media (max-width: 576px) {
-    font-size: 1.2rem;
-  }
 `;
 
 const StyledUl = styled.ul`
@@ -105,54 +112,48 @@ function Product({ product }) {
 
   const slides = [
     {
-      src: product.img,
+      src: product.image,
     },
   ];
-
-  console.log('slides is: ', slides);
 
   return (
     <StyledProduct>
       <Card className="card">
         <StyledImg
           className="card-img-top"
-          src={product.img}
+          src={product.image}
           alt="Card image cap"
         />
         <CardBody className="card-body">
-          <h5 className="card-title">{product.product_title}</h5>
-          <p className="card-text">{product.short_desc}</p>
+          <h5 className="card-title">{product.title}</h5>
+          <p className="card-text">{product.description}</p>
           <Modal>
             <Modal.Open opens="form-modal">
-              <StyledLink className="stretched-link">Detalii produs</StyledLink>
+              <StyledLink className="stretched-link">
+                {product.button_text}
+              </StyledLink>
             </Modal.Open>
             <Modal.Window
               name="form-modal"
-              title={product.product_title}
+              title={product.title}
               lightboxOpen={lightboxOpen}
             >
-              <Row className="row">
-                <div className="col-lg-6 d-flex justify-content-center">
-                  <ImgContainer>
-                    <StyledImgModal
-                      src={product.img}
-                      className="img-fluid"
-                      onClick={() => setLightboxOpen(true)}
-                    />
-                  </ImgContainer>
-                </div>
-                <div className="col-lg-6">
-                  <StyledH4>Specificații produs</StyledH4>
-                  <StyledUl>
-                    {product.features.map((feature) => (
-                      <LiItem>
-                        <StyledFontAwesomeIcon icon={faCheck} />
-                        {feature}
-                      </LiItem>
-                    ))}
-                  </StyledUl>
-                </div>
-              </Row>
+              <ModalContainer>
+                <StyledImgModal
+                  src={product.image}
+                  className="img-fluid"
+                  onClick={() => setLightboxOpen(true)}
+                />
+
+                <StyledUl>
+                  {product.specs.map((spec) => (
+                    <LiItem>
+                      <StyledFontAwesomeIcon icon={faCheck} />
+                      {spec}
+                    </LiItem>
+                  ))}
+                </StyledUl>
+              </ModalContainer>
             </Modal.Window>
           </Modal>
           <Lightbox

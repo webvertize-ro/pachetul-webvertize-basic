@@ -1,0 +1,513 @@
+{
+  "page": "home",
+  "sections": {
+    "header": [
+      {
+        "key": "header_title",
+        "label": "Titlu principal",
+        "value": "Afacerea ta locală, făcută bine",
+        "content_type": "text"
+      },
+      {
+        "key": "header_description",
+        "label": "Descriere header",
+        "value": "Oferim servicii de calitate, adaptate nevoilor comunității locale. Punem accent pe seriozitate, atenție la detalii și rezultate care vorbesc de la sine.",
+        "content_type": "text"
+      },
+      {
+        "key": "header_button_projects_text",
+        "label": "Buton 'Vezi proiecte' — text",
+        "value": "Vezi proiecte",
+        "content_type": "text"
+      },
+      {
+        "key": "header_button_offer_text",
+        "label": "Buton 'Cere o ofertă' — text",
+        "value": "Cere o ofertă de preț",
+        "content_type": "text"
+      },
+      {
+        "key": "header_image",
+        "label": "Imaginea header",
+        "value": "https://placehold.co/600x500",
+        "content_type": "image_url"
+      }
+    ],
+    "stats": [
+      {
+        "key": "stats_title",
+        "label": "Titlu secțiune statistici",
+        "value": "Câteva cifre despre experiența noastră",
+        "content_type": "text"
+      },
+      {
+        "key": "stat_1_number",
+        "label": "Statistică 1 — număr",
+        "value": "12",
+        "content_type": "text"
+      },
+      {
+        "key": "stat_1_label",
+        "label": "Statistică 1 — descriere",
+        "value": "ani de activitate",
+        "content_type": "text"
+      },
+      {
+        "key": "stat_2_number",
+        "label": "Statistică 2 — număr",
+        "value": "275",
+        "content_type": "text"
+      },
+      {
+        "key": "stat_2_label",
+        "label": "Statistică 2 — descriere",
+        "value": "clienți mulțumiți",
+        "content_type": "text"
+      },
+      {
+        "key": "stat_3_number",
+        "label": "Statistică 3 — număr",
+        "value": "150",
+        "content_type": "text"
+      },
+      {
+        "key": "stat_3_label",
+        "label": "Statistică 3 — descriere",
+        "value": "Recenzii pozitive",
+        "content_type": "text"
+      }
+    ],
+    "gallery": [
+      {
+        "key": "gallery_title",
+        "label": "Titlu galerie",
+        "value": "Galerie foto din activitatea noastră",
+        "content_type": "text"
+      },
+      {
+        "key": "gallery_description",
+        "label": "Descriere galerie",
+        "value": "Descoperă câteva imagini care surprind modul în care lucrăm, proiectele realizate și atenția pe care o acordăm fiecărui detaliu.",
+        "content_type": "text"
+      },
+      {
+        "key": "gallery_image_1",
+        "label": "Galerie — imagine 1",
+        "value": "https://placehold.co/400x300",
+        "content_type": "image_url"
+      },
+      {
+        "key": "gallery_image_1_alt",
+        "label": "Galerie — descriere imagine 1",
+        "value": "Descriere imagine 1",
+        "content_type": "text"
+      },
+      {
+        "key": "gallery_image_2",
+        "label": "Galerie — imagine 2",
+        "value": "https://placehold.co/400x300",
+        "content_type": "image_url"
+      },
+      {
+        "key": "gallery_image_2_alt",
+        "label": "Galerie — descriere imagine 2",
+        "value": "Descriere imagine 2",
+        "content_type": "text"
+      },
+      {
+        "key": "gallery_image_3",
+        "label": "Galerie — imagine 3",
+        "value": "https://placehold.co/400x300",
+        "content_type": "image_url"
+      },
+      {
+        "key": "gallery_image_3_alt",
+        "label": "Galerie — descriere imagine 3",
+        "value": "Descriere imagine 3",
+        "content_type": "text"
+      },
+      {
+        "key": "gallery_image_4",
+        "label": "Galerie — imagine 4",
+        "value": "https://placehold.co/400x300",
+        "content_type": "image_url"
+      },
+      {
+        "key": "gallery_image_4_alt",
+        "label": "Galerie — descriere imagine 4",
+        "value": "Descriere imagine 4",
+        "content_type": "text"
+      },
+      {
+        "key": "gallery_image_5",
+        "label": "Galerie — imagine 5",
+        "value": "https://placehold.co/400x300",
+        "content_type": "image_url"
+      },
+      {
+        "key": "gallery_image_5_alt",
+        "label": "Galerie — descriere imagine 5",
+        "value": "Descriere imagine 5",
+        "content_type": "text"
+      },
+      {
+        "key": "gallery_image_6",
+        "label": "Galerie — imagine 6",
+        "value": "https://placehold.co/400x300",
+        "content_type": "image_url"
+      },
+      {
+        "key": "gallery_image_6_alt",
+        "label": "Galerie — descriere imagine 6",
+        "value": "Descriere imagine 6",
+        "content_type": "text"
+      }
+    ],
+    "services": [
+      {
+        "key": "services_image",
+        "label": "Servicii — imagine",
+        "value": "https://placehold.co/600x500",
+        "content_type": "image_url"
+      },
+      {
+        "key": "services_title",
+        "label": "Servicii — titlu",
+        "value": "Toate serviciile de care ai nevoie, într-un singur loc",
+        "content_type": "text"
+      },
+      {
+        "key": "services_description",
+        "label": "Servicii — descriere",
+        "value": "Lucrăm simplu, atent și adaptat fiecărui proiect. Ne concentrăm pe rezultate clare și colaborări pe termen lung.",
+        "content_type": "text"
+      },
+      {
+        "key": "services_item_1",
+        "label": "Serviciu 1",
+        "value": "Consultanță personalizată",
+        "content_type": "text"
+      },
+      {
+        "key": "services_item_2",
+        "label": "Serviciu 2",
+        "value": "Servicii de calitate",
+        "content_type": "text"
+      },
+      {
+        "key": "services_item_3",
+        "label": "Serviciu 3",
+        "value": "Suport și asistență clienți",
+        "content_type": "text"
+      },
+      {
+        "key": "services_item_4",
+        "label": "Serviciu 4",
+        "value": "Livrare / Implementare rapidă",
+        "content_type": "text"
+      },
+      {
+        "key": "services_item_5",
+        "label": "Serviciu 5",
+        "value": "Proiecte personalizate",
+        "content_type": "text"
+      },
+      {
+        "key": "services_button_more_text",
+        "label": "Buton 'Află mai multe' — text",
+        "value": "Află mai multe",
+        "content_type": "text"
+      },
+      {
+        "key": "services_button_offer_text",
+        "label": "Buton 'Cere o ofertă' — text",
+        "value": "Cere o ofertă de preț",
+        "content_type": "text"
+      }
+    ],
+    "partners": [
+      {
+        "key": "partners_title",
+        "label": "Parteneri — titlu",
+        "value": "Partenerii noștri",
+        "content_type": "text"
+      },
+      {
+        "key": "partner_logo_1",
+        "label": "Partener 1 — logo",
+        "value": "https://placehold.co/160x80",
+        "content_type": "image_url"
+      },
+      {
+        "key": "partner_logo_1_alt",
+        "label": "Partener 1 — nume",
+        "value": "Partener 1",
+        "content_type": "text"
+      },
+      {
+        "key": "partner_logo_2",
+        "label": "Partener 2 — logo",
+        "value": "https://placehold.co/160x80",
+        "content_type": "image_url"
+      },
+      {
+        "key": "partner_logo_2_alt",
+        "label": "Partener 2 — nume",
+        "value": "Partener 2",
+        "content_type": "text"
+      },
+      {
+        "key": "partner_logo_3",
+        "label": "Partener 3 — logo",
+        "value": "https://placehold.co/160x80",
+        "content_type": "image_url"
+      },
+      {
+        "key": "partner_logo_3_alt",
+        "label": "Partener 3 — nume",
+        "value": "Partener 3",
+        "content_type": "text"
+      },
+      {
+        "key": "partner_logo_4",
+        "label": "Partener 4 — logo",
+        "value": "https://placehold.co/160x80",
+        "content_type": "image_url"
+      },
+      {
+        "key": "partner_logo_4_alt",
+        "label": "Partener 4 — nume",
+        "value": "Partener 4",
+        "content_type": "text"
+      },
+      {
+        "key": "partner_logo_5",
+        "label": "Partener 5 — logo",
+        "value": "https://placehold.co/160x80",
+        "content_type": "image_url"
+      },
+      {
+        "key": "partner_logo_5_alt",
+        "label": "Partener 5 — nume",
+        "value": "Partener 5",
+        "content_type": "text"
+      },
+      {
+        "key": "partner_logo_6",
+        "label": "Partener 6 — logo",
+        "value": "https://placehold.co/160x80",
+        "content_type": "image_url"
+      },
+      {
+        "key": "partner_logo_6_alt",
+        "label": "Partener 6 — nume",
+        "value": "Partener 6",
+        "content_type": "text"
+      }
+    ],
+    "why_choose_us": [
+      {
+        "key": "why_image",
+        "label": "De ce noi — imagine",
+        "value": "https://placehold.co/600x500",
+        "content_type": "image_url"
+      },
+      {
+        "key": "why_title",
+        "label": "De ce noi — titlu",
+        "value": "De ce să alegi serviciile afacerii noastre",
+        "content_type": "text"
+      },
+      {
+        "key": "why_reason_1_title",
+        "label": "Motiv 1 — titlu",
+        "value": "Experiență și profesionalism",
+        "content_type": "text"
+      },
+      {
+        "key": "why_reason_1_description",
+        "label": "Motiv 1 — descriere",
+        "value": "Lucrăm organizat și atent la detalii, cu focus pe soluții bine făcute și rezultate durabile.",
+        "content_type": "text"
+      },
+      {
+        "key": "why_reason_2_title",
+        "label": "Motiv 2 — titlu",
+        "value": "Comunicare clară și transparentă",
+        "content_type": "text"
+      },
+      {
+        "key": "why_reason_2_description",
+        "label": "Motiv 2 — descriere",
+        "value": "Știi mereu la ce să te aștepți. Fără promisiuni vagi, fără costuri ascunse.",
+        "content_type": "text"
+      },
+      {
+        "key": "why_reason_3_title",
+        "label": "Motiv 3 — titlu",
+        "value": "Soluții adaptate nevoilor tale",
+        "content_type": "text"
+      },
+      {
+        "key": "why_reason_3_description",
+        "label": "Motiv 3 — descriere",
+        "value": "Fiecare proiect este diferit, iar noi tratăm fiecare colaborare cu atenție și flexibilitate.",
+        "content_type": "text"
+      },
+      {
+        "key": "why_reason_4_title",
+        "label": "Motiv 4 — titlu",
+        "value": "Accent pe calitate și încredere",
+        "content_type": "text"
+      },
+      {
+        "key": "why_reason_4_description",
+        "label": "Motiv 4 — descriere",
+        "value": "Construim relații pe termen lung, bazate pe seriozitate și respect față de clienți.",
+        "content_type": "text"
+      },
+      {
+        "key": "why_button_text",
+        "label": "Buton 'Obține o ofertă' — text",
+        "value": "Obține o ofertă de preț",
+        "content_type": "text"
+      }
+    ],
+    "reviews": [
+      {
+        "key": "reviews_title",
+        "label": "Recenzii — titlu",
+        "value": "Ce spun clienții noștri",
+        "content_type": "text"
+      },
+      {
+        "key": "reviews_description",
+        "label": "Recenzii — descriere",
+        "value": "Experiențe reale de la cei care ne cunosc",
+        "content_type": "text"
+      },
+      {
+        "key": "reviews_button_text",
+        "label": "Buton recenzie Google — text",
+        "value": "Scrie-ne o recenzie Google",
+        "content_type": "text"
+      },
+      {
+        "key": "reviews_button_url",
+        "label": "Buton recenzie Google — link",
+        "value": "https://g.page/r/YOUR_GOOGLE_REVIEW_LINK",
+        "content_type": "text"
+      },
+      {
+        "key": "review_1_image",
+        "label": "Recenzie 1 — imagine",
+        "value": "https://placehold.co/80x80",
+        "content_type": "image_url"
+      },
+      {
+        "key": "review_1_stars",
+        "label": "Recenzie 1 — stele (1-5)",
+        "value": "5",
+        "content_type": "text"
+      },
+      {
+        "key": "review_1_quote",
+        "label": "Recenzie 1 — citat",
+        "value": "Colaborarea a decurs foarte bine de la început până la final. Comunicarea a fost clară, iar rezultatul a fost exact ce ne doream.",
+        "content_type": "text"
+      },
+      {
+        "key": "review_2_image",
+        "label": "Recenzie 2 — imagine",
+        "value": "https://placehold.co/80x80",
+        "content_type": "image_url"
+      },
+      {
+        "key": "review_2_stars",
+        "label": "Recenzie 2 — stele (1-5)",
+        "value": "5",
+        "content_type": "text"
+      },
+      {
+        "key": "review_2_quote",
+        "label": "Recenzie 2 — citat",
+        "value": "Am apreciat seriozitatea și atenția la detalii. Totul a fost explicat pe înțelesul nostru, fără complicații inutile.",
+        "content_type": "text"
+      },
+      {
+        "key": "review_3_image",
+        "label": "Recenzie 3 — imagine",
+        "value": "https://placehold.co/80x80",
+        "content_type": "image_url"
+      },
+      {
+        "key": "review_3_stars",
+        "label": "Recenzie 3 — stele (1-5)",
+        "value": "5",
+        "content_type": "text"
+      },
+      {
+        "key": "review_3_quote",
+        "label": "Recenzie 3 — citat",
+        "value": "Un proces simplu și eficient. Am primit soluții potrivite nevoilor noastre și suport ori de câte ori a fost nevoie.",
+        "content_type": "text"
+      },
+      {
+        "key": "review_4_image",
+        "label": "Recenzie 4 — imagine",
+        "value": "https://placehold.co/80x80",
+        "content_type": "image_url"
+      },
+      {
+        "key": "review_4_stars",
+        "label": "Recenzie 4 — stele (1-5)",
+        "value": "4",
+        "content_type": "text"
+      },
+      {
+        "key": "review_4_quote",
+        "label": "Recenzie 4 — citat",
+        "value": "Ne-a plăcut abordarea profesionistă și faptul că am fost implicați pe tot parcursul proiectului.",
+        "content_type": "text"
+      },
+      {
+        "key": "review_5_image",
+        "label": "Recenzie 5 — imagine",
+        "value": "https://placehold.co/80x80",
+        "content_type": "image_url"
+      },
+      {
+        "key": "review_5_stars",
+        "label": "Recenzie 5 — stele (1-5)",
+        "value": "5",
+        "content_type": "text"
+      },
+      {
+        "key": "review_5_quote",
+        "label": "Recenzie 5 — citat",
+        "value": "Recomand pentru modul de lucru organizat și rezultatul final. O colaborare corectă și fără surprize.",
+        "content_type": "text"
+      }
+    ],
+    "cta": [
+      {
+        "key": "cta_title",
+        "label": "CTA — titlu",
+        "value": "Vrei să vezi cum te pot ajuta serviciile noastre?",
+        "content_type": "text"
+      },
+      {
+        "key": "cta_description",
+        "label": "CTA — descriere",
+        "value": "Fiecare proiect este diferit. Completează câteva detalii și primești o ofertă personalizată, rapid și fără obligații.",
+        "content_type": "text"
+      },
+      {
+        "key": "cta_button_text",
+        "label": "CTA — text buton",
+        "value": "Cere o ofertă de preț",
+        "content_type": "text"
+      }
+    ]
+  }
+}

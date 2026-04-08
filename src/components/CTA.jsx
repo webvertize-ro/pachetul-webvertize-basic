@@ -2,6 +2,8 @@ import { faMessage } from '@fortawesome/free-solid-svg-icons';
 import Modal from './Modal';
 import Form from './Form';
 import styled from 'styled-components';
+import { useContent } from '../hooks/useContent';
+import { c } from '../utils/content';
 
 const StyledCTA = styled.div`
   position: relative;
@@ -68,11 +70,7 @@ const StyledButton = styled.button`
   }
 `;
 
-function CTA({
-  title = 'Vrei să vezi cum te pot ajuta serviciile noastre?',
-  text = 'Fiecare proiect este diferit. Completează câteva detalii și primești o ofertă personalizată, rapid și fără obligații.',
-  textBtn = 'Cere o ofertă de preț',
-}) {
+function CTA({ title, description, button_text }) {
   return (
     <StyledCTA className="get-quote text-center">
       <div className="container">
@@ -80,10 +78,10 @@ function CTA({
           <div className="col-lg-8 offset-lg-2">
             <TextContent>
               <StyledH2 className="lh-base">{title}</StyledH2>
-              <StyledP>{text}</StyledP>
+              <StyledP>{description}</StyledP>
               <Modal>
                 <Modal.Open opens="form-modal">
-                  <StyledButton>{textBtn}</StyledButton>
+                  <StyledButton>{button_text}</StyledButton>
                 </Modal.Open>
                 <Modal.Window name="form-modal">
                   <Form />

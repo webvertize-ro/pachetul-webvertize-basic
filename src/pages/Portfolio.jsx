@@ -5,10 +5,14 @@ import Projects from '../components/Projects';
 import ReasonsToChooseUs from '../components/ReasonsToChooseUs';
 import CTA from '../components/CTA';
 import { useEffect } from 'react';
+import { c } from '../utils/content';
+import { useContent } from '../hooks/useContent';
 
 const StyledPortfolio = styled.div``;
 
 function Portfolio() {
+  const { contentMap } = useContent();
+
   useEffect(() => {
     document.title = 'Afacere Locală | Portofoliu';
   }, []);
@@ -16,15 +20,17 @@ function Portfolio() {
   return (
     <StyledPortfolio>
       <Hero
-        heroTitle="Proiectele noastre"
-        heroDesc="O selecție de lucrări care reflectă experiența, calitatea și modul nostru de lucru."
-        heroBg={portfolioHeroImg}
+        heroTitle={c(contentMap, 'portfolio.header_title')}
+        heroDesc={c(contentMap, 'portfolio.header_description')}
+        heroBg={c(contentMap, 'portfolio.header_bg_image')}
+        btnTxt={c(contentMap, 'portfolio.header_button_text')}
       />
       <Projects />
       <ReasonsToChooseUs />
       <CTA
-        title="Ai un proiect în plan?"
-        text="Suntem gata să transformăm ideile tale în rezultate reale. Contactează-ne pentru o ofertă personalizată."
+        title={c(contentMap, 'portfolio.cta_title')}
+        description={c(contentMap, 'portfolio.cta_description')}
+        button_text={c(contentMap, 'portfolio.cta_button_text')}
       />
     </StyledPortfolio>
   );

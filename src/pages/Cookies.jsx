@@ -4,6 +4,8 @@ import Hero from '../components/Hero';
 import cookiesImg from '../assets/images/cookies-img.jpg';
 import CookiesInfoSection from '../components/CookiesInfoSection';
 import { useEffect } from 'react';
+import { c } from '../utils/content';
+import { useContent } from '../hooks/useContent';
 
 const StyledCookies = styled.div`
   @media (min-width: 576px) and (max-width: 992px) {
@@ -12,6 +14,8 @@ const StyledCookies = styled.div`
 `;
 
 function Cookies() {
+  const { contentMap } = useContent();
+
   useEffect(() => {
     document.title = 'Afacere Locală | Politica de cookies';
   }, []);
@@ -19,9 +23,10 @@ function Cookies() {
   return (
     <StyledCookies>
       <Hero
-        heroTitle="Politica noastră privind cookie-urile"
-        heroDesc="Cookie-urile sunt fișiere mici stocate pe dispozitivul tău atunci când vizitezi un site web. Ele ajută site-ul să funcționeze corect, să îți ofere o experiență personalizată și să colecteze informații statistice despre modul în care este folosit. Folosind site-ul nostru, accepți utilizarea cookie-urilor conform acestei politici."
-        heroBg={cookiesImg}
+        heroTitle={c(contentMap, 'cookies.header_title')}
+        heroDesc={c(contentMap, 'cookies.header_description')}
+        heroBg={c(contentMap, 'cookies.header_bg_image')}
+        btnTxt={c(contentMap, 'cookies.header_button_text')}
       />
       <Accordion />
       <CookiesInfoSection />

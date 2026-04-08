@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 import { reasonsToChooseUs } from '../data/reasonsToChooseUs';
 import CustomizableItem from '../components/CustomizableItem';
+import { c } from '../utils/content';
+import { useContent } from '../hooks/useContent';
+import { iconMap } from '../utils/iconMap';
 
 const StyledWhatRecommendsUs = styled.div`
   display: flex;
@@ -53,16 +56,24 @@ const Item = styled.div`
 `;
 
 function ReasonsToChooseUs() {
+  const { contentMap } = useContent();
+  const reasons = [1, 2, 3, 4].map((n) => ({
+    icon: iconMap[c(contentMap, `portfolio.reason_${n}_icon`)],
+    title: c(contentMap, `portfolio.reason_${n}_title`),
+    description: c(contentMap, `portfolio.reason_${n}_description`),
+  }));
+
+  console.log('reasons: ', reasons);
+
   return (
     <StyledWhatRecommendsUs>
       <div className="container">
-        <StyledH2>Ce ne recomandă</StyledH2>
+        <StyledH2>{c(contentMap, 'portfolio.what_recommends_title')}</StyledH2>
         <StyledP>
-          Clienții noștri apreciază calitatea serviciilor și atenția la detalii.
-          Iată câteva motive pentru care aleg să colaboreze cu noi:
+          {c(contentMap, 'portfolio.what_recommends_description')}
         </StyledP>
         <div className="row d-flex gap-2">
-          {reasonsToChooseUs.map((reason) => (
+          {reasons.map((reason) => (
             <Item className="col-12">
               {console.log(reason)}
               <CustomizableItem

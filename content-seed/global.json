@@ -1,0 +1,241 @@
+{
+  "page": "global",
+  "sections": {
+    "brand": [
+      {
+        "key": "brand_name",
+        "label": "Numele afacerii",
+        "value": "Afacerea Ta Locală",
+        "content_type": "text"
+      },
+      {
+        "key": "logo",
+        "label": "Logo (160x60px)",
+        "value": "https://placehold.co/160x60",
+        "content_type": "image_url"
+      },
+      {
+        "key": "favicon",
+        "label": "Favicon",
+        "value": "https://placehold.co/32x32",
+        "content_type": "image_url"
+      }
+    ],
+    "navbar": [
+      {
+        "key": "navbar_link_1_text",
+        "label": "Navbar — link 1 text",
+        "value": "Acasă",
+        "content_type": "text"
+      },
+      {
+        "key": "navbar_link_1_route",
+        "label": "Navbar — link 1 rută",
+        "value": "/",
+        "content_type": "text"
+      },
+      {
+        "key": "navbar_link_2_text",
+        "label": "Navbar — link 2 text",
+        "value": "Servicii",
+        "content_type": "text"
+      },
+      {
+        "key": "navbar_link_2_route",
+        "label": "Navbar — link 2 rută",
+        "value": "/services",
+        "content_type": "text"
+      },
+      {
+        "key": "navbar_link_3_text",
+        "label": "Navbar — link 3 text",
+        "value": "Portofoliu",
+        "content_type": "text"
+      },
+      {
+        "key": "navbar_link_3_route",
+        "label": "Navbar — link 3 rută",
+        "value": "/portfolio",
+        "content_type": "text"
+      },
+      {
+        "key": "navbar_link_4_text",
+        "label": "Navbar — link 4 text",
+        "value": "Contact",
+        "content_type": "text"
+      },
+      {
+        "key": "navbar_link_4_route",
+        "label": "Navbar — link 4 rută",
+        "value": "/contact",
+        "content_type": "text"
+      },
+      {
+        "key": "navbar_social_1",
+        "label": "Navbar — social media 1",
+        "value": "{\"platform\": \"facebook\", \"url\": \"https://facebook.com\"}",
+        "content_type": "social_link"
+      },
+      {
+        "key": "navbar_social_2",
+        "label": "Navbar — social media 2",
+        "value": "{\"platform\": \"instagram\", \"url\": \"https://instagram.com\"}",
+        "content_type": "social_link"
+      }
+    ],
+    "footer": [
+      {
+        "key": "footer_description",
+        "label": "Footer — descriere afacere",
+        "value": "Acesta este un mic paragraf despre afacerea ta. Poate fi un scurt text descriptiv, un motto sau orice altceva ți se pare relevant.",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_links_title",
+        "label": "Footer — titlu secțiune linkuri",
+        "value": "Linkuri utile",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_link_1_text",
+        "label": "Footer — link 1 text",
+        "value": "Acasă",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_link_1_route",
+        "label": "Footer — link 1 rută",
+        "value": "/",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_link_2_text",
+        "label": "Footer — link 2 text",
+        "value": "Servicii",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_link_2_route",
+        "label": "Footer — link 2 rută",
+        "value": "/services",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_link_3_text",
+        "label": "Footer — link 3 text",
+        "value": "Portofoliu",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_link_3_route",
+        "label": "Footer — link 3 rută",
+        "value": "/portfolio",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_link_4_text",
+        "label": "Footer — link 4 text",
+        "value": "Contact",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_link_4_route",
+        "label": "Footer — link 4 rută",
+        "value": "/contact",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_link_5_text",
+        "label": "Footer — link 5 text",
+        "value": "Politica de cookies",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_link_5_route",
+        "label": "Footer — link 5 rută",
+        "value": "/cookies",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_social_title",
+        "label": "Footer — titlu secțiune social media",
+        "value": "Rețele de socializare",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_social_1",
+        "label": "Footer — social media 1",
+        "value": "{\"platform\": \"facebook\", \"url\": \"https://facebook.com\"}",
+        "content_type": "social_link"
+      },
+      {
+        "key": "footer_social_2",
+        "label": "Footer — social media 2",
+        "value": "{\"platform\": \"instagram\", \"url\": \"https://instagram.com\"}",
+        "content_type": "social_link"
+      },
+      {
+        "key": "footer_social_3",
+        "label": "Footer — social media 3",
+        "value": "{\"platform\": \"tiktok\", \"url\": \"https://tiktok.com\"}",
+        "content_type": "social_link"
+      },
+      {
+        "key": "footer_social_4",
+        "label": "Footer — social media 4",
+        "value": "{\"platform\": \"youtube\", \"url\": \"https://youtube.com\"}",
+        "content_type": "social_link"
+      },
+      {
+        "key": "footer_paragraph",
+        "label": "Footer — paragraf cu link",
+        "value": "Ne poți scrie direct pe email la",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_paragraph_link_text",
+        "label": "Footer — text link din paragraf",
+        "value": "contact@afacerea_ta.ro",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_paragraph_link_url",
+        "label": "Footer — URL link din paragraf",
+        "value": "https://webvertize.ro",
+        "content_type": "text"
+      },
+      {
+        "key": "footer_copyright",
+        "label": "Footer — copyright",
+        "value": "© 2025 Afacerea Ta Locală. Toate drepturile rezervate.",
+        "content_type": "text"
+      }
+    ],
+    "contact": [
+      {
+        "key": "contact_phone",
+        "label": "Telefon",
+        "value": "0722 123 456",
+        "content_type": "text"
+      },
+      {
+        "key": "contact_email",
+        "label": "Email",
+        "value": "contact@afacerea_ta.ro",
+        "content_type": "text"
+      },
+      {
+        "key": "contact_address",
+        "label": "Adresă",
+        "value": "Str. Exemplu nr. 1, Galați",
+        "content_type": "text"
+      },
+      {
+        "key": "contact_hours",
+        "label": "Program",
+        "value": "Luni — Vineri: 09:00 — 18:00",
+        "content_type": "text"
+      }
+    ]
+  }
+}

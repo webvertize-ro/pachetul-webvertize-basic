@@ -4,6 +4,8 @@ import contactImg from '../assets/images/contact-img.jpg';
 import ContactSection from '../components/ContactSection';
 import CTA from '../components/CTA';
 import { useEffect } from 'react';
+import { useContent } from '../hooks/useContent';
+import { c } from '../utils/content';
 
 const StyledContact = styled.div`
   /* height: 650px; */
@@ -20,17 +22,21 @@ function Contact() {
     document.title = 'Afacere Locală | Contact';
   }, []);
 
+  const { contentMap } = useContent();
+
   return (
     <StyledContact>
       <Hero
-        heroBg={contactImg}
-        heroTitle="Hai să discutăm despre proiectul tău"
-        heroDesc="Ne face plăcere să răspundem la întrebările tale și să găsim soluții adaptate nevoilor afacerii tale. Completează formularul sau folosește datele de contact de mai jos."
+        heroBg={c(contentMap, 'contact.header_bg_image')}
+        heroTitle={c(contentMap, 'contact.header_title')}
+        heroDesc={c(contentMap, 'contact.header_description')}
+        btnTxt={c(contentMap, 'contact.header_button_text')}
       />
       <ContactSection />
       <CTA
-        title="Vrei să lucrăm împreună?"
-        text="Completează formularul sau contactează-ne direct și hai să discutăm cum putem să-ți transformăm ideile în proiecte concrete."
+        title={c(contentMap, 'contact.cta_title')}
+        description={c(contentMap, 'contact.cta_description')}
+        button_text={c(contentMap, 'contact.cta_button_text')}
       />
     </StyledContact>
   );

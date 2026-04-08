@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { timeline } from '../data/timeline';
 import TimelineItem from './TimelineItem';
+import { useContent } from '../hooks/useContent';
+import { c } from '../utils/content';
 
 const StyledTimelineHowWeWork = styled.div`
   padding: 3rem 0;
@@ -60,27 +62,33 @@ const Row = styled.div`
 `;
 
 function TimelineHowWeWork() {
+  const { contentMap } = useContent();
+
+  const steps = [1, 2, 3, 4].map((n) => ({
+    number: c(contentMap, `services.step_${n}_number`),
+    icon: c(contentMap, `services.step_${n}_icon`),
+    title: c(contentMap, `services.step_${n}_title`),
+    description: c(contentMap, `services.step_${n}_description`),
+    button_text: c(contentMap, `services.step_${n}_button_text`),
+  }));
+
   return (
     <StyledTimelineHowWeWork>
       <div className="container">
-        <StyledH2>Cum lucrăm</StyledH2>
-        <StyledP>
-          Un proces simplu, clar și ușor de urmărit, de la prima discuție până
-          la livrarea finală.
-        </StyledP>
+        <StyledH2>{c(contentMap, 'services.how_we_work_title')}</StyledH2>
+        <StyledP>{c(contentMap, 'services.how_we_work_description')}</StyledP>
 
         <Row className="row">
           <div className="col-lg-12">
             <HorizontalTimeline className="horizontal-timeline">
               <ul className="list-inline items">
-                {timeline.map((timeline, i) => (
+                {steps.map((step, i) => (
                   <TimelineItem
-                    iconNum={timeline.iconNum}
-                    icon={timeline.icon}
-                    title={timeline.title}
-                    desc={timeline.desc}
-                    CTAtext={timeline.CTAtext}
-                    btnLink={timeline.btnLink}
+                    iconNum={step.number}
+                    icon={step.icon}
+                    title={step.title}
+                    desc={step.description}
+                    CTAtext={step.button_text}
                   />
                 ))}
               </ul>

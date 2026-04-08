@@ -1,8 +1,18 @@
 import styled from 'styled-components';
 import Card from './Card';
-import { services } from '../data/services';
 
-import { faComment } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBolt,
+  faComment,
+  faGear,
+  faHandshake,
+  faShieldHalved,
+  faStar,
+  faWrench,
+} from '@fortawesome/free-solid-svg-icons';
+import { useContent } from '../hooks/useContent';
+import { c } from '../utils/content';
+import { iconMap } from '../utils/iconMap';
 
 const StyledServicesDetails = styled.div`
   padding: 3rem 0;
@@ -46,22 +56,29 @@ const StyledP = styled.p`
 `;
 
 function ServicesDetails() {
+  const { contentMap } = useContent();
+
+  const services = [1, 2, 3, 4, 5, 6].map((n) => ({
+    title: c(contentMap, `services.service_${n}_title`),
+    description: c(contentMap, `services.service_${n}_description`),
+    bg_img: c(contentMap, `services.service_${n}_bg_image`),
+    icon: iconMap[c(contentMap, `services.service_${n}_icon`)],
+  }));
+
+  console.log('services: ', services);
+
   return (
     <StyledServicesDetails>
       <div className="container">
-        <StyledH2>Serviciile noastre</StyledH2>
-        <StyledP>
-          Oferim servicii adaptate nevoilor tale, realizate cu atenție la
-          detalii și focus pe calitate. Descoperă mai jos ce putem face pentru
-          tine.
-        </StyledP>
+        <StyledH2>{c(contentMap, 'services.services_title')}</StyledH2>
+        <StyledP>{c(contentMap, 'services.services_description')}</StyledP>
         <Services className="row">
           {services.map((service, i) => {
             return (
               <div key={i} className="col-sm-4 col-md-4 mb-4">
                 <Card
                   title={service.title}
-                  text={service.text}
+                  text={service.description}
                   bg_img={service.bg_img}
                   icon={service.icon}
                 />

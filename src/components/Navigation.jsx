@@ -1,9 +1,17 @@
-import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faTiktok,
+  faYoutube,
+} from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useEffect, useRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Logo from './Logo';
+import { useContent } from '../hooks/useContent';
+import { c } from '../utils/content';
 
 const StyledNav = styled.nav`
   height: 80px;
@@ -107,6 +115,7 @@ const BurgerLine = styled.div`
 `;
 
 function Navigation() {
+  const { contentMap, isLoading, error } = useContent();
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const navigation = useRef(null);
 
@@ -131,6 +140,27 @@ function Navigation() {
     if (!link) return;
     setIsNavbarOpen(false);
   }
+
+  // Social Links
+  const socialLinks = [1, 2, 3, 4]
+    .map((n) => {
+      const raw = c(contentMap, `navbar_social_${n}`);
+      if (!raw) return null;
+      try {
+        return JSON.parse(raw);
+      } catch {
+        return null;
+      }
+    })
+    .filter(Boolean);
+
+  const iconMap = {
+    facebook: faFacebook,
+    instagram: faInstagram,
+    tiktok: faTiktok,
+    youtube: faYoutube,
+    linkedin: faLinkedin,
+  };
 
   return (
     <StyledNav
@@ -160,27 +190,43 @@ function Navigation() {
           id="menuLinks"
         >
           <StyledNavUl className="navbar-nav ms-auto">
-            <StyledNavLink to="/" className="nav-item nav-link">
-              Acasă
+            <StyledNavLink
+              to={c(contentMap, 'navbar_link_1_route')}
+              className="nav-item nav-link"
+            >
+              {c(contentMap, 'navbar_link_1_text')}
             </StyledNavLink>
-            <StyledNavLink to="/services" className="nav-item nav-link">
-              Servicii
+            <StyledNavLink
+              to={c(contentMap, 'navbar_link_2_route')}
+              className="nav-item nav-link"
+            >
+              {c(contentMap, 'navbar_link_2_text')}
             </StyledNavLink>
-            <StyledNavLink to="/portfolio" className="nav-item nav-link">
-              Portofoliu
+            <StyledNavLink
+              to={c(contentMap, 'navbar_link_3_route')}
+              className="nav-item nav-link"
+            >
+              {c(contentMap, 'navbar_link_3_text')}
             </StyledNavLink>
-            <StyledNavLink to="/contact" className="nav-item nav-link">
-              Contact
+            <StyledNavLink
+              to={c(contentMap, 'navbar_link_4_route')}
+              className="nav-item nav-link"
+            >
+              {c(contentMap, 'navbar_link_4_text')}
             </StyledNavLink>
           </StyledNavUl>
         </StyledNavCollapse>
         <StyledSocialLinks>
-          <StyledAnchor href="https://facebook.com" target="_blank">
-            <StyledFontAwesomeIcon icon={faFacebook} />
-          </StyledAnchor>
-          <StyledAnchor href="https://instagram.com" target="_blank">
-            <StyledFontAwesomeIcon icon={faInstagram} />
-          </StyledAnchor>
+          {socialLinks.map((link) => (
+            <StyledAnchor
+              key={link.platform}
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <StyledFontAwesomeIcon icon={iconMap[link.platform]} />
+            </StyledAnchor>
+          ))}
         </StyledSocialLinks>
       </StyledNavContainer>
     </StyledNav>

@@ -14,6 +14,19 @@ const StyledProjectsCard = styled.div`
 const StyledImg = styled.img`
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
+  width: 635px;
+  height: 425px;
+  object-fit: cover;
+
+  @media (max-width: 576px) {
+    width: 100%;
+    height: 250px;
+  }
+
+  @media (min-width: 576px) and (max-width: 1024px) {
+    width: 100%;
+    height: 325px;
+  }
 `;
 
 const StyledH5 = styled.h5`
@@ -63,7 +76,6 @@ function ProjectsCard({
   const slides = imageGallery.map((img) => {
     return {
       src: img.src,
-      title: img.imgDesc,
     };
   });
 

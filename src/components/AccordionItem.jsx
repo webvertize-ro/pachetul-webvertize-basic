@@ -55,7 +55,14 @@ const QuestionAnswer = styled.div`
   }
 `;
 
-function AccordionItem({ question, answer, index, curOpen, onCurOpen }) {
+function AccordionItem({
+  question,
+  answer,
+  index,
+  curOpen,
+  onCurOpen,
+  number,
+}) {
   const isOpen = curOpen === index;
 
   function handleToggle() {
@@ -65,7 +72,7 @@ function AccordionItem({ question, answer, index, curOpen, onCurOpen }) {
   return (
     <StyledAccordionItem isOpen={isOpen}>
       <Question onClick={() => handleToggle()} isOpen={isOpen}>
-        <QuestionNumber>{index}</QuestionNumber>
+        <QuestionNumber>{number}</QuestionNumber>
         <QuestionText>{question}</QuestionText>
       </Question>
       {isOpen && <QuestionAnswer>{answer}</QuestionAnswer>}

@@ -1,0 +1,391 @@
+{
+  "page": "portfolio",
+  "sections": {
+    "header": [
+      {
+        "key": "header_bg_image",
+        "label": "Header — imagine fundal",
+        "value": "https://placehold.co/1920x400",
+        "content_type": "image_url"
+      },
+      {
+        "key": "header_title",
+        "label": "Header — titlu",
+        "value": "Proiectele noastre",
+        "content_type": "text"
+      },
+      {
+        "key": "header_description",
+        "label": "Header — descriere",
+        "value": "O selecție de lucrări care reflectă experiența, calitatea și modul nostru de lucru.",
+        "content_type": "text"
+      },
+      {
+        "key": "header_button_text",
+        "label": "Header — text buton",
+        "value": "Cere o ofertă de preț",
+        "content_type": "text"
+      }
+    ],
+    "projects": [
+      {
+        "key": "projects_title",
+        "label": "Proiecte — titlu secțiune",
+        "value": "Proiectele noastre",
+        "content_type": "text"
+      },
+      {
+        "key": "projects_description",
+        "label": "Proiecte — descriere secțiune",
+        "value": "O selecție de lucrări care reflectă experiența, calitatea și modul nostru de lucru.",
+        "content_type": "text"
+      },
+      {
+        "key": "project_1_card_image",
+        "label": "Proiect 1 — imagine card",
+        "value": "https://placehold.co/400x300",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_1_card_title",
+        "label": "Proiect 1 — titlu card",
+        "value": "Construcția unei case familiale",
+        "content_type": "text"
+      },
+      {
+        "key": "project_1_card_description",
+        "label": "Proiect 1 — descriere card",
+        "value": "Scurtă descriere a primului proiect.",
+        "content_type": "text"
+      },
+      {
+        "key": "project_1_card_button_text",
+        "label": "Proiect 1 — text buton card",
+        "value": "Vezi detalii",
+        "content_type": "text"
+      },
+      {
+        "key": "project_1_modal_image_1",
+        "label": "Proiect 1 — imagine modal 1",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_1_modal_image_2",
+        "label": "Proiect 1 — imagine modal 2",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_1_modal_image_3",
+        "label": "Proiect 1 — imagine modal 3",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_1_modal_image_4",
+        "label": "Proiect 1 — imagine modal 4",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_1_modal_title",
+        "label": "Proiect 1 — titlu modal",
+        "value": "Detalii proiect",
+        "content_type": "text"
+      },
+      {
+        "key": "project_1_modal_description",
+        "label": "Proiect 1 — descriere modal",
+        "value": "Acest proiect a presupus realizarea unei locuințe individuale, pornind de la etapa de concept și până la finalizarea lucrărilor. Am colaborat îndeaproape cu beneficiarul pentru a înțelege nevoile sale și pentru a livra o soluție practică, durabilă și eficientă. Fiecare etapă a fost atent planificată, cu accent pe calitate, respectarea termenelor și atenție la detalii.",
+        "content_type": "text"
+      },
+      {
+        "key": "project_2_card_image",
+        "label": "Proiect 2 — imagine card",
+        "value": "https://placehold.co/400x300",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_2_card_title",
+        "label": "Proiect 2 — titlu card",
+        "value": "Scrierea și publicarea unei cărți",
+        "content_type": "text"
+      },
+      {
+        "key": "project_2_card_description",
+        "label": "Proiect 2 — descriere card",
+        "value": "Scurtă descriere a celui de-al doilea proiect.",
+        "content_type": "text"
+      },
+      {
+        "key": "project_2_card_button_text",
+        "label": "Proiect 2 — text buton card",
+        "value": "Vezi detalii",
+        "content_type": "text"
+      },
+      {
+        "key": "project_2_modal_image_1",
+        "label": "Proiect 2 — imagine modal 1",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_2_modal_image_2",
+        "label": "Proiect 2 — imagine modal 2",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_2_modal_image_3",
+        "label": "Proiect 2 — imagine modal 3",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_2_modal_image_4",
+        "label": "Proiect 2 — imagine modal 4",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_2_modal_title",
+        "label": "Proiect 2 — titlu modal",
+        "value": "Detalii proiect",
+        "content_type": "text"
+      },
+      {
+        "key": "project_2_modal_description",
+        "label": "Proiect 2 — descriere modal",
+        "value": "Proiectul a constat în dezvoltarea unei cărți, începând cu definirea conceptului și structurii, continuând cu redactarea conținutului și finalizarea materialului pentru publicare. Accentul a fost pus pe claritate, coerență și organizare, astfel încât rezultatul final să fie ușor de parcurs și relevant pentru publicul țintă. Întregul proces a fost gestionat etapizat, cu feedback constant și ajustări pe parcurs.",
+        "content_type": "text"
+      },
+      {
+        "key": "project_3_card_image",
+        "label": "Proiect 3 — imagine card",
+        "value": "https://placehold.co/400x300",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_3_card_title",
+        "label": "Proiect 3 — titlu card",
+        "value": "Plantarea și îngrijirea unui copac",
+        "content_type": "text"
+      },
+      {
+        "key": "project_3_card_description",
+        "label": "Proiect 3 — descriere card",
+        "value": "Scurtă descriere a celui de-al treilea proiect.",
+        "content_type": "text"
+      },
+      {
+        "key": "project_3_card_button_text",
+        "label": "Proiect 3 — text buton card",
+        "value": "Vezi detalii",
+        "content_type": "text"
+      },
+      {
+        "key": "project_3_modal_image_1",
+        "label": "Proiect 3 — imagine modal 1",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_3_modal_image_2",
+        "label": "Proiect 3 — imagine modal 2",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_3_modal_image_3",
+        "label": "Proiect 3 — imagine modal 3",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_3_modal_image_4",
+        "label": "Proiect 3 — imagine modal 4",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_3_modal_title",
+        "label": "Proiect 3 — titlu modal",
+        "value": "Detalii proiect",
+        "content_type": "text"
+      },
+      {
+        "key": "project_3_modal_description",
+        "label": "Proiect 3 — descriere modal",
+        "value": "Acest proiect a avut ca scop plantarea unui copac și stabilirea condițiilor necesare pentru o dezvoltare sănătoasă în timp. A inclus alegerea locației potrivite, pregătirea solului și stabilirea unui plan de întreținere. Deși aparent simplu, proiectul evidențiază importanța responsabilității și a pașilor corecți pentru rezultate durabile.",
+        "content_type": "text"
+      },
+      {
+        "key": "project_4_card_image",
+        "label": "Proiect 4 — imagine card",
+        "value": "https://placehold.co/400x300",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_4_card_title",
+        "label": "Proiect 4 — titlu card",
+        "value": "Program de fitness și exerciții fizice",
+        "content_type": "text"
+      },
+      {
+        "key": "project_4_card_description",
+        "label": "Proiect 4 — descriere card",
+        "value": "Scurtă descriere a celui de-al patrulea proiect.",
+        "content_type": "text"
+      },
+      {
+        "key": "project_4_card_button_text",
+        "label": "Proiect 4 — text buton card",
+        "value": "Vezi detalii",
+        "content_type": "text"
+      },
+      {
+        "key": "project_4_modal_image_1",
+        "label": "Proiect 4 — imagine modal 1",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_4_modal_image_2",
+        "label": "Proiect 4 — imagine modal 2",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_4_modal_image_3",
+        "label": "Proiect 4 — imagine modal 3",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_4_modal_image_4",
+        "label": "Proiect 4 — imagine modal 4",
+        "value": "https://placehold.co/800x600",
+        "content_type": "image_url"
+      },
+      {
+        "key": "project_4_modal_title",
+        "label": "Proiect 4 — titlu modal",
+        "value": "Detalii proiect",
+        "content_type": "text"
+      },
+      {
+        "key": "project_4_modal_description",
+        "label": "Proiect 4 — descriere modal",
+        "value": "Proiectul a constat în crearea unui program de exerciții fizice adaptat obiectivelor individuale. A inclus evaluarea nivelului inițial, stabilirea etapelor de progres și ajustarea constantă a rutinei. Scopul principal a fost obținerea unor rezultate sustenabile, prin disciplină, consecvență și abordare echilibrată.",
+        "content_type": "text"
+      }
+    ],
+    "what_recommends_us": [
+      {
+        "key": "what_recommends_title",
+        "label": "Ce ne recomandă — titlu secțiune",
+        "value": "Ce ne recomandă",
+        "content_type": "text"
+      },
+      {
+        "key": "what_recommends_description",
+        "label": "Ce ne recomandă — descriere secțiune",
+        "value": "Clienții noștri apreciază calitatea serviciilor și atenția la detalii. Iată câteva motive pentru care aleg să colaboreze cu noi:",
+        "content_type": "text"
+      },
+      {
+        "key": "reason_1_icon",
+        "label": "Motiv 1 — icon FontAwesome",
+        "value": "fa-solid fa-star",
+        "content_type": "icon"
+      },
+      {
+        "key": "reason_1_title",
+        "label": "Motiv 1 — titlu",
+        "value": "Experiență în domeniu",
+        "content_type": "text"
+      },
+      {
+        "key": "reason_1_description",
+        "label": "Motiv 1 — descriere",
+        "value": "Fiecare proiect este realizat cu profesionalism și cunoștințe solide acumulate în timp.",
+        "content_type": "text"
+      },
+      {
+        "key": "reason_2_icon",
+        "label": "Motiv 2 — icon FontAwesome",
+        "value": "fa-solid fa-shield-halved",
+        "content_type": "icon"
+      },
+      {
+        "key": "reason_2_title",
+        "label": "Motiv 2 — titlu",
+        "value": "Respectarea termenelor",
+        "content_type": "text"
+      },
+      {
+        "key": "reason_2_description",
+        "label": "Motiv 2 — descriere",
+        "value": "Ne asigurăm că fiecare lucrare este finalizată la timp, fără întârzieri neprevăzute.",
+        "content_type": "text"
+      },
+      {
+        "key": "reason_3_icon",
+        "label": "Motiv 3 — icon FontAwesome",
+        "value": "fa-solid fa-handshake",
+        "content_type": "icon"
+      },
+      {
+        "key": "reason_3_title",
+        "label": "Motiv 3 — titlu",
+        "value": "Comunicare clară",
+        "content_type": "text"
+      },
+      {
+        "key": "reason_3_description",
+        "label": "Motiv 3 — descriere",
+        "value": "Îți explicăm fiecare pas și suntem mereu disponibili pentru întrebări sau clarificări.",
+        "content_type": "text"
+      },
+      {
+        "key": "reason_4_icon",
+        "label": "Motiv 4 — icon FontAwesome",
+        "value": "fa-solid fa-clock",
+        "content_type": "icon"
+      },
+      {
+        "key": "reason_4_title",
+        "label": "Motiv 4 — titlu",
+        "value": "Soluții adaptate fiecărui proiect",
+        "content_type": "text"
+      },
+      {
+        "key": "reason_4_description",
+        "label": "Motiv 4 — descriere",
+        "value": "Fiecare lucrare este personalizată conform nevoilor și obiectivelor tale.",
+        "content_type": "text"
+      }
+    ],
+    "cta": [
+      {
+        "key": "cta_title",
+        "label": "CTA — titlu",
+        "value": "Ai un proiect în plan?",
+        "content_type": "text"
+      },
+      {
+        "key": "cta_description",
+        "label": "CTA — descriere",
+        "value": "Suntem gata să transformăm ideile tale în rezultate reale. Contactează-ne pentru o ofertă personalizată.",
+        "content_type": "text"
+      },
+      {
+        "key": "cta_button_text",
+        "label": "CTA — text buton",
+        "value": "Cere o ofertă de preț",
+        "content_type": "text"
+      }
+    ]
+  }
+}

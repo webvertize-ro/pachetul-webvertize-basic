@@ -1,7 +1,8 @@
 import styled from 'styled-components';
-import cookies from '../data/cookies.json';
 import AccordionItem from './AccordionItem';
 import { useState } from 'react';
+import { useContent } from '../hooks/useContent';
+import { c } from '../utils/content';
 
 const StyledAccordion = styled.div`
   padding: 3rem 0;
@@ -38,14 +39,24 @@ const AccordionContainer = styled.div`
 
 function Accordion() {
   const [curOpen, setCurOpen] = useState(1);
+  const { contentMap } = useContent();
+
+  const cookies = [1, 2, 3, 4, 5].map((n) => ({
+    number: c(contentMap, `cookies.accordion_item_${n}_number`),
+    question: c(contentMap, `cookies.accordion_item_${n}_question`),
+    answer: c(contentMap, `cookies.accordion_item_${n}_answer`),
+  }));
+
+  console.log('cookies: ', cookies);
 
   return (
     <StyledAccordion>
       <div className="container">
-        <StyledH2>Întrebări frecvente (FAQ) despre cookies</StyledH2>
+        <StyledH2>{c(contentMap, 'cookies.accordion_title')}</StyledH2>
         <AccordionContainer className="accordion" id="accordionExample">
           {cookies.map((cookie, index) => (
             <AccordionItem
+              number={cookie.number}
               question={cookie.question}
               answer={cookie.answer}
               index={index + 1}

@@ -15,6 +15,8 @@
     "@fortawesome/free-regular-svg-icons": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "@fortawesome/react-fontawesome": "^3.1.1",
+    "@supabase/supabase-js": "^2.101.1",
+    "@tanstack/react-query": "^5.96.1",
     "bootstrap": "^5.3.8",
     "mongodb": "^7.0.0",
     "nodemailer": "^7.0.12",

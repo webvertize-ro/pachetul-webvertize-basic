@@ -2,6 +2,7 @@ import { useState } from 'react';
 import styled from 'styled-components';
 import Lightbox from 'yet-another-react-lightbox';
 import { Captions } from 'yet-another-react-lightbox/plugins';
+import { useContent } from '../hooks/useContent';
 
 const StyledPhotoGallery = styled.div`
   padding: 3rem 0;
@@ -19,8 +20,19 @@ const StyledPhotoGallery = styled.div`
 
 const StyledImg = styled.img`
   border-radius: 1rem;
-  height: 100%;
-  width: 100%;
+
+  width: 400px;
+  height: 300px;
+
+  @media (max-width: 576px) {
+    width: unset;
+    height: unset;
+  }
+
+  @media (min-width: 576px) and (max-width: 1024px) {
+    width: unset;
+    height: unset;
+  }
 `;
 
 const ImageContainer = styled.div`
@@ -94,6 +106,7 @@ const StyledP = styled.p`
 `;
 
 function PhotoGallery({ title, text, images }) {
+  const { contentMap } = useContent();
   const [open, setOpen] = useState(false);
   const [indexImg, setIndexImg] = useState(0);
 

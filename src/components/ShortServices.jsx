@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBriefcase, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router';
+import { c } from '../utils/content';
+import { useContent } from '../hooks/useContent';
 
 const StyledShortServices = styled.div`
   padding-top: 3rem;
@@ -119,11 +121,21 @@ const Button2 = styled(Link)`
 `;
 
 const StyledImg = styled.img`
-  max-width: 425px;
+  width: 425px;
+  height: 635px;
   border-radius: 1.5rem;
+  object-fit: cover;
 
   @media (max-width: 576px) {
-    max-width: 275px;
+    width: 250px;
+    height: 300px;
+    border-radius: 1.5rem;
+  }
+
+  @media (min-width: 576px) and (max-width: 992px) {
+    width: 350px;
+    height: 425px;
+    border-radius: 1.5rem;
   }
 `;
 
@@ -138,51 +150,44 @@ const TextContent = styled.div`
 `;
 
 function ShortServices() {
+  const { contentMap } = useContent();
+  const servicesList = [1, 2, 3, 4, 5].map((n) => ({
+    text: c(contentMap, `home.services_item_${n}`),
+  }));
+
   return (
     <StyledShortServices>
       <div className="container">
         <Row className="row d-flex align-items-center">
           {/* Image */}
           <div className="col-lg-6 d-flex justify-content-center">
-            <StyledImg src={shortServicesPic} className="img-fluid" />
+            <StyledImg
+              src={c(contentMap, 'home.services_image')}
+              className="img-fluid"
+            />
           </div>
           {/* Text */}
           <TextContent className="col-lg-6 ">
-            <StyledH2>
-              Toate serviciile de care ai nevoie, într-un singur loc
-            </StyledH2>
-            <StyledP>
-              Lucrăm simplu, atent și adaptat fiecărui proiect. Ne concentrăm pe
-              rezultate clare și colaborări pe termen lung.
-            </StyledP>
+            <StyledH2>{c(contentMap, 'home.services_title')}</StyledH2>
+            <StyledP>{c(contentMap, 'home.services_description')}</StyledP>
 
             <StyledUl>
-              <StyledLi>
-                <FontAwesomeIcon icon={faBriefcase} />
-                Consultanță personalizată
-              </StyledLi>
-              <StyledLi>
-                <FontAwesomeIcon icon={faBriefcase} />
-                Servicii de calitate
-              </StyledLi>
-              <StyledLi>
-                <FontAwesomeIcon icon={faBriefcase} />
-                Suport și asistență clienți
-              </StyledLi>
-              <StyledLi>
-                <FontAwesomeIcon icon={faBriefcase} />
-                Livrare / Implementare rapidă
-              </StyledLi>
-              <StyledLi>
-                <FontAwesomeIcon icon={faBriefcase} />
-                Proiecte personalizate
-              </StyledLi>
+              {servicesList.map((item) => (
+                <StyledLi>
+                  <FontAwesomeIcon icon={faBriefcase} />
+                  {item.text}
+                </StyledLi>
+              ))}
             </StyledUl>
             <div className="d-flex justify-content-center align-items-center gap-2">
-              <Button1 to="/services">Află mai multe</Button1>
+              <Button1 to="/services">
+                {c(contentMap, 'home.services_button_more_text')}
+              </Button1>
               <Modal>
                 <Modal.Open opens="form-modal">
-                  <Button2>Cere o ofertă de preț</Button2>
+                  <Button2>
+                    {c(contentMap, 'home.services_button_offer_text')}
+                  </Button2>
                 </Modal.Open>
                 <Modal.Window name="form-modal">
                   <Form />

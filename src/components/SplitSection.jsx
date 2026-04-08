@@ -3,6 +3,8 @@ import headerBusinessPic from '../assets/images/split_section_pic1.jpg';
 import { Link } from 'react-router';
 import Form from './Form';
 import Modal from './Modal';
+import { useContent } from '../hooks/useContent';
+import { c } from '../utils/content';
 
 const StyledHeader = styled.header`
   position: relative;
@@ -135,27 +137,27 @@ const Button2 = styled(Link)`
 `;
 
 const HeaderBusinessPic = styled.img`
-  max-width: 425px;
+  width: 425px;
+  height: 635px;
   border-radius: 1.5rem;
+  object-fit: cover;
 
   @media (max-width: 576px) {
-    max-width: 275px;
+    width: 250px;
+    height: 300px;
+    border-radius: 1.5rem;
   }
 
   @media (min-width: 576px) and (max-width: 992px) {
-    max-width: 350px;
+    width: 350px;
+    height: 425px;
+    border-radius: 1.5rem;
   }
 `;
 
-function SplitSection({
-  imageRight = true,
-  heading = 'Afacerea ta locală, făcută bine',
-  shortIntro = 'Oferim servicii de calitate, adaptate nevoilor comunității locale. Punem accent pe seriozitate, atenție la detalii și rezultate care vorbesc de la sine.',
-  btn1 = 'Vezi proiecte',
-  btn1Path,
-  btn2 = 'Cere o ofertă de preț',
-  img = headerBusinessPic,
-}) {
+function SplitSection({ imageRight = true, btn1Path }) {
+  const { contentMap } = useContent();
+
   return (
     <StyledHeader>
       <HeaderContainer className="container position-relative z-3">
@@ -165,14 +167,22 @@ function SplitSection({
         >
           <HeaderContent className="col-lg-6">
             <div className="mt-6">
-              <StyledH1 className="xl-text">{heading}</StyledH1>
-              <ShortIntro>{shortIntro}</ShortIntro>
+              <StyledH1 className="xl-text">
+                {c(contentMap, 'home.header_title')}
+              </StyledH1>
+              <ShortIntro>
+                {c(contentMap, 'home.header_description')}
+              </ShortIntro>
               <ButtonsContainer>
-                <Button1 to={btn1Path}>{btn1}</Button1>
+                <Button1 to={btn1Path}>
+                  {c(contentMap, 'home.header_button_projects_text')}
+                </Button1>
 
                 <Modal>
                   <Modal.Open opens="form-modal">
-                    <Button2>{btn2}</Button2>
+                    <Button2>
+                      {c(contentMap, 'home.header_button_offer_text')}
+                    </Button2>
                   </Modal.Open>
                   <Modal.Window name="form-modal">
                     <Form />
@@ -183,7 +193,10 @@ function SplitSection({
           </HeaderContent>
           <HeaderContent className="col-lg-6">
             <div className="image-container">
-              <HeaderBusinessPic src={img} className="img-fluid" />
+              <HeaderBusinessPic
+                src={c(contentMap, 'home.header_image')}
+                className="img-fluid"
+              />
             </div>
           </HeaderContent>
         </HeaderRow>

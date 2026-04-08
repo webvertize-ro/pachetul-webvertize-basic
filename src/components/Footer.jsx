@@ -7,8 +7,12 @@ import {
   faFacebook,
   faInstagram,
   faPinterest,
+  faTiktok,
   faTwitter,
+  faYoutube,
 } from '@fortawesome/free-brands-svg-icons';
+import { useContent } from '../hooks/useContent';
+import { c } from '../utils/content';
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -37,6 +41,29 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 `;
 
 function Footer() {
+  const { contentMap, isLoading } = useContent();
+
+  if (isLoading) return <div>Laoding...</div>;
+
+  const iconMap = {
+    facebook: faFacebook,
+    instagram: faInstagram,
+    tiktok: faTiktok,
+    youtube: faYoutube,
+  };
+
+  const socialLinks = [1, 2, 3, 4]
+    .map((n) => {
+      const raw = c(contentMap, `footer_social_${n}`);
+      if (!raw) return null;
+      try {
+        return JSON.parse(raw);
+      } catch {
+        return null;
+      }
+    })
+    .filter(Boolean);
+
   return (
     <StyledFooter className="footer py-6">
       <div className="container">
@@ -46,56 +73,56 @@ function Footer() {
               <h5 className="fw-bold">Despre</h5>
               <Logo width="100" />
             </div>
-            <p>
-              Acesta este un mic paragraf despre afacerea ta. Poate fi un scurt
-              text descriptiv, un motto sau orice altceva ți se pare relevant.
-            </p>
+            <p>{c(contentMap, 'footer_description')}</p>
           </div>
           <div className="col-md-4 my-3">
-            <h5 className="fw-bold">Link-uri Utile</h5>
+            <h5 className="fw-bold">{c(contentMap, 'footer_links_title')}</h5>
             <ul className="list-unstyled">
               <li>
                 <FontAwesomeIcon icon={faCheck} />
-                <StyledNavLink to="/">Acasă</StyledNavLink>
+                <StyledNavLink to={c(contentMap, 'footer_link_1_route')}>
+                  {c(contentMap, 'footer_link_1_text')}
+                </StyledNavLink>
               </li>
               <li>
                 <FontAwesomeIcon icon={faCheck} />
-                <StyledNavLink to="/services">Servicii</StyledNavLink>
+                <StyledNavLink to={c(contentMap, 'footer_link_2_route')}>
+                  {c(contentMap, 'footer_link_2_text')}
+                </StyledNavLink>
               </li>
               <li>
                 <FontAwesomeIcon icon={faCheck} />
-                <StyledNavLink to="/portfolio">Portfoliu</StyledNavLink>
+                <StyledNavLink to={c(contentMap, 'footer_link_3_route')}>
+                  {c(contentMap, 'footer_link_3_text')}
+                </StyledNavLink>
               </li>
               <li>
                 <FontAwesomeIcon icon={faCheck} />
-                <StyledNavLink to="/contact">Contact</StyledNavLink>
+                <StyledNavLink to={c(contentMap, 'footer_link_4_route')}>
+                  {c(contentMap, 'footer_link_4_text')}
+                </StyledNavLink>
               </li>
               <li>
                 <FontAwesomeIcon icon={faCheck} />
-                <StyledNavLink to="/cookies">Politica de Cookies</StyledNavLink>
+                <StyledNavLink to={c(contentMap, 'footer_link_5_route')}>
+                  {c(contentMap, 'footer_link_5_text')}
+                </StyledNavLink>
               </li>
             </ul>
           </div>
           <div className="col-md-4 my-3">
-            <h5 className="fw-bold">Rețele de socializare</h5>
+            <h5 className="fw-bold">{c(contentMap, 'footer_social_title')}</h5>
             <div className="mb-4 d-flex gap-2">
-              <a href="#" className="text-decoration-none">
-                <StyledFontAwesomeIcon icon={faFacebook} />
-              </a>
-              <a href="#" className="text-decoration-none">
-                <StyledFontAwesomeIcon icon={faTwitter} />
-              </a>
-              <a href="#" className="text-decoration-none">
-                <StyledFontAwesomeIcon icon={faInstagram} />
-              </a>
-              <a href="#" className="text-decoration-none">
-                <StyledFontAwesomeIcon icon={faPinterest} />
-              </a>
+              {socialLinks.map((link) => (
+                <a key={link.platform} href={link.url} target="_blank">
+                  <StyledFontAwesomeIcon icon={iconMap[link.platform]} />
+                </a>
+              ))}
             </div>
             <p>
-              Ne poți scrie direct pe email la
-              <a href="mailto:contact@site.com">
-                <strong> contact@afacerea_ta.ro</strong>
+              {c(contentMap, 'footer_paragraph')}
+              <a href={c(contentMap, 'footer_paragraph_link')}>
+                <strong> {c(contentMap, 'footer_paragraph_link_text')}</strong>
               </a>
             </p>
           </div>

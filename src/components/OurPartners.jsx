@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { partners } from '../data/partners.js';
+import { useContent } from '../hooks/useContent.js';
+import { c } from '../utils/content.js';
 
 const StyledSection = styled.section`
   background-color: #1b3c53;
@@ -31,20 +32,35 @@ const PartnerItem = styled.div`
 `;
 
 const StyledImg = styled.img`
+  width: 160px;
+  height: 80px;
   @media (max-width: 576px) {
     max-width: 150px;
   }
 `;
 
 function OurPartners() {
+  const { contentMap } = useContent();
+
+  const partners = [1, 2, 3, 4, 5, 6].map((n) => ({
+    src: c(contentMap, `home.partner_logo_${n}`),
+    alt: c(contentMap, `home.partner_logo_${n}_alt`),
+  }));
+
   return (
     <StyledSection className="mySection partners overflow-hidden">
       <div className="container">
-        <h6 className="text-center mb-4 text-uppercase">Partenerii noștri</h6>
+        <h6 className="text-center mb-4 text-uppercase">
+          {c(contentMap, 'home.partners_title')}
+        </h6>
         <Row className="row">
           {partners.map((partner) => (
             <PartnerItem className="col-md-2">
-              <StyledImg src={partner.img} alt="test" className="img-fluid" />
+              <StyledImg
+                src={partner.src}
+                alt={partner.alt}
+                className="img-fluid"
+              />
             </PartnerItem>
           ))}
         </Row>

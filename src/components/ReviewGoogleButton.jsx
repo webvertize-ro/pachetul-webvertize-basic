@@ -1,6 +1,8 @@
 import { faPenToSquare, faSquarePen } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
+import { useContent } from '../hooks/useContent';
+import { c } from '../utils/content';
 
 const StyledReviewGoogleButton = styled.a`
   display: flex;
@@ -24,10 +26,15 @@ const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
 `;
 
 function ReviewGoogleButton() {
+  const { contentMap } = useContent();
+
   return (
-    <StyledReviewGoogleButton href="https://google.com" target="_blank">
+    <StyledReviewGoogleButton
+      href={c(contentMap, 'home.reviews_button_url')}
+      target="_blank"
+    >
       <StyledFontAwesomeIcon icon={faPenToSquare} />
-      <div>Scrie-ne o recenzie Google</div>
+      <div>{c(contentMap, 'home.reviews_button_text')}</div>
     </StyledReviewGoogleButton>
   );
 }
