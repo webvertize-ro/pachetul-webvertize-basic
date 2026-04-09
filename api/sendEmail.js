@@ -1,5 +1,13 @@
 import nodemailer from 'nodemailer';
 import clientPromise from '../lib/mongodb.js';
+import { WEBSITE_ID } from '../config.js';
+import { createClient } from '@supabase/supabase-js';
+
+// create the supabase client
+const supabase = createClient(
+  process.env.SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY,
+);
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -25,10 +33,6 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'CAPTCHA verification failed!' });
   }
 
-  const client = await clientPromise;
-  const db = client.db('PacheteWebvertize');
-  const collection = db.collection('PachetulWebvertizeBasic');
-
   // Determine the user's IP
   const forwardedFor = req.headers['x-forwarded-for'];
   const ip = forwardedFor
@@ -39,17 +43,24 @@ export default async function handler(req, res) {
   const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
 
   // Count how many submissions this IP made in the last 24 hours
-  const submissionsCount = await collection.countDocuments({
-    ip: ip,
-    createdAt: { $gte: twentyFourHoursAgo },
-  });
+  const { count: submissionsCount, error } = await supabase
+    .from('submissions')
+    .select('*', { count: 'exact', head: true })
+    .eq('ip', ip)
+    .eq('website_id', WEBSITE_ID)
+    .gte('created_at', twentyFourHoursAgo.toISOString());
+
+  if (error) {
+    throw new Error(error.message);
+  }
 
   if (submissionsCount >= 2) {
     return res.status(429).json({ status: 'Too many requests!' });
   }
 
+  // Validation
+
   if (!name || !phone || !email) {
-    // Validation
     return res.status(400).json({ status: 'Missing required fields!' });
   }
 
@@ -84,11 +95,17 @@ export default async function handler(req, res) {
 
   const body = req.body;
 
-  await collection.insertOne({
-    ...body,
-    ip,
-    createdAt: new Date(),
-  });
+  // Inserting the submission in the database
+  const { data, errorInsert } = await supabase
+    .from('submissions')
+    .insert({ ...body, ip: ip, website_id: WEBSITE_ID })
+    .select();
+
+  console.log('inserted data is: ', data);
+
+  if (errorInsert) {
+    throw new Error('There was an error inserting data in Supabase!');
+  }
 
   res.status(200).json({ success: true });
 }

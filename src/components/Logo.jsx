@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import logoImg from '../assets/images/basic-business-logo.svg';
 import { useContent } from '../hooks/useContent';
+import { c } from '../utils/content';
 
 const StyledImg = styled.img`
   max-width: ${(props) => (props.width ? props.width : '160px')};
@@ -9,7 +10,9 @@ const StyledImg = styled.img`
 function Logo({ width }) {
   const { contentMap, isLoading, error } = useContent();
 
-  return <StyledImg width={width} src={contentMap.logo?.value} />;
+  return (
+    <StyledImg width={width} src={c(contentMap, 'global.business_logo')} />
+  );
 }
 
 export default Logo;
