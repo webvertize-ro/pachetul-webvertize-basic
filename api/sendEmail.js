@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 import { WEBSITE_ID } from '../config.js';
-import { createClient } from '@supabase/supabase-js';
+import { PACKAGE } from '../config.js';
 import supabase from '../services/supabase.js';
 
 export default async function handler(req, res) {
@@ -92,10 +92,8 @@ export default async function handler(req, res) {
   // Inserting the submission in the database
   const { data, errorInsert } = await supabase
     .from('submissions')
-    .insert({ ...body, ip: ip, website_id: WEBSITE_ID })
+    .insert({ ...body, ip: ip, website_id: WEBSITE_ID, package: PACKAGE })
     .select();
-
-  console.log('inserted data is: ', data);
 
   if (errorInsert) {
     throw new Error('There was an error inserting data in Supabase!');
