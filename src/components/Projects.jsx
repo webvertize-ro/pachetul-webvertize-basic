@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { projects } from '../data/projects';
 import ProjectsCard from './ProjectsCard';
 import { useContent } from '../hooks/useContent';
 import { c } from '../utils/content';

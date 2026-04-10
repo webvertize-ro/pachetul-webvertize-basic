@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import CustomizableItem from './CustomizableItem';
-import { contact } from '../data/contactInfo';
 import ContactDataItem from './ContactDataItem';
 import Modal from './Modal';
 import Form from './Form';

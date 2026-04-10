@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { reasonsToChooseUs } from '../data/reasonsToChooseUs';
 import CustomizableItem from '../components/CustomizableItem';
 import { c } from '../utils/content';
 import { useContent } from '../hooks/useContent';

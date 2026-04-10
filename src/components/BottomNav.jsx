@@ -6,7 +6,6 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
-import progrm from '../data/program.json';
 import { useState } from 'react';
 
 const StyledBottomNav = styled.div`

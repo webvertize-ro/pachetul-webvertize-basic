@@ -1,7 +1,6 @@
 import { fa1, faComment } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
-import { timeline } from '../data/timeline';
 import TimelineItem from './TimelineItem';
 import { useContent } from '../hooks/useContent';
 import { c } from '../utils/content';

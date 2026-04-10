@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import testimonials from '../data/testimonials.json';
 import Avatar from './Avatar';
 import RatingStars from './RatingStars';
 import TestimonialContent from './TestimonialContent';
