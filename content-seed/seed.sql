@@ -423,3 +423,11 @@ insert into content (website_id, page, section, key, label, value, content_type,
 ('49e00d1c-b989-41c3-a898-62c9500fcb64', 'thank-you', 'thank-you-section', 'thank-you-paragraph-2', 'Pagina de Multumim - Paragraful 2', 'Urmează să vă contactăm în cel mai scurt timp în legătură cu solicitarea dumneavoastră!', 'text', 330),
 ('49e00d1c-b989-41c3-a898-62c9500fcb64', 'thank-you', 'thank-you-section', 'thank-you-button-text', 'Pagina de Multumim - Buton Text', 'Înapoi pe pagina principală', 'text', 331),
 ('49e00d1c-b989-41c3-a898-62c9500fcb64', 'thank-you', 'thank-you-section', 'thank-you-button-route', 'Pagina de Multumim - Buton Rută', '/', 'text', 332);
+
+-- /too-many-requests page
+
+insert into content (website_id, page, section, key, label, value, content_type, display_order) values
+('49e00d1c-b989-41c3-a898-62c9500fcb64', 'too-many-requests', 'too-many-requests-section', 'too-many-requests-paragraph-1', 'Pagina de Prea Multe Solicitări - Paragraful 1', 'Din motive de securitate, limităm numărul de solicitări care pot fi trimise într-un anumit interval de timp. Vă rugăm să reîncercați după 24 de ore.', 'text', 333),
+('49e00d1c-b989-41c3-a898-62c9500fcb64', 'too-many-requests', 'too-many-requests-section', 'too-many-requests-paragraph-2', 'Pagina de Prea Multe Solicitări - Paragraful 2', 'Dacă este o urgență, ne puteți contacta direct la numărul de telefon 0712345678. Mulțumim pentru înțelegere!', 'text', 334),
+('49e00d1c-b989-41c3-a898-62c9500fcb64', 'too-many-requests', 'too-many-requests-section', 'too-many-requests-button-text', 'Pagina de Prea Multe Solicitări - Buton Text', 'Înapoi pe pagina principală', 'text', 335),
+('49e00d1c-b989-41c3-a898-62c9500fcb64', 'too-many-requests', 'too-many-requests-section', 'too-many-requests-button-route', 'Pagina de Prea Multe Solicitări - Buton Rută', '/', 'text', 336);
