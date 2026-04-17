@@ -12,7 +12,7 @@ export function useContent() {
     data?.reduce((acc, row) => {
       // store with page prefix: "home.header_title", "services.header_title"
       acc[`${row.page}.${row.key}`] = row;
-      // also store without prefic for truly global keys
+      // also store without prefix for truly global keys
       if (row.page === 'global') {
         acc[row.key] = row;
       }

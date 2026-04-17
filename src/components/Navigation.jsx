@@ -116,6 +116,7 @@ const BurgerLine = styled.div`
 
 function Navigation() {
   const { contentMap, isLoading, error } = useContent();
+
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const navigation = useRef(null);
 

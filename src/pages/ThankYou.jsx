@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import Logo from '../components/Logo';
 import { Link, useNavigate } from 'react-router';
 import { useEffect, useState } from 'react';
+import { useContent } from '../hooks/useContent';
+import { c } from '../utils/content';
 
 const StyledThankYou = styled.div`
   height: 100vh;
@@ -37,6 +39,7 @@ function ThankYou() {
   const navigate = useNavigate();
 
   const [allowed, setAllowed] = useState(false);
+  const { contentMap } = useContent();
 
   useEffect(() => {
     // check sessionStorage
@@ -56,12 +59,11 @@ function ThankYou() {
   return (
     <StyledThankYou>
       <Logo />
-      <StyledP>Vă mulțumim pentru completarea formularului!</StyledP>
-      <StyledP>
-        Urmează să vă contactăm în cel mai scurt timp în legătură cu solicitarea
-        dumneavoastră!
-      </StyledP>
-      <StyledButton to="/">Înapoi pe pagina principală</StyledButton>
+      <StyledP>{c(contentMap, 'thank-you.thank-you-paragraph-1')}</StyledP>
+      <StyledP>{c(contentMap, 'thank-you.thank-you-paragraph-2')}</StyledP>
+      <StyledButton to={c(contentMap, 'thank-you.thank-you-button-route')}>
+        {c(contentMap, 'thank-you.thank-you-button-text')}
+      </StyledButton>
     </StyledThankYou>
   );
 }

@@ -1,4 +1,5 @@
 import {
+  faArrowUpRightDots,
   faHourglass,
   faHourglassHalf,
   faStar,
@@ -52,6 +53,11 @@ function Stats() {
   const sectionRef = useRef(null);
   const [startCounters, setStartCounters] = useState(false);
 
+  const stats = [1, 2, 3].map((n) => ({
+    number: c(contentMap, `home.stat_${n}_number`),
+    achivement: c(contentMap, `home.stat_${n}_label`),
+  }));
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -79,41 +85,16 @@ function Stats() {
           {c(contentMap, 'home.stats_title')}
         </StyledSectionTitle>
         <div className="row my-6">
-          <div className="col-md-4 col-sm-6 text-center">
-            <div className="d-flex justify-content-center align-items-center gap-2">
-              <StyledFontAwesomeIcon icon={faHourglassHalf} />
+          {stats.map((stat) => (
+            <div className="col-md-4 col-sm-6 text-center">
+              <div className="d-flex justify-content-center align-items-center gap-2">
+                <StyledFontAwesomeIcon icon={faArrowUpRightDots} />
 
-              <Counter
-                target={c(contentMap, 'home.stat_1_number')}
-                start={startCounters}
-              />
+                <Counter target={stat.number} start={startCounters} />
+              </div>
+              <CouterItem>{stat.achivement}</CouterItem>
             </div>
-            <CouterItem>{c(contentMap, 'home.stat_1_label')}</CouterItem>
-          </div>
-
-          <div className="col-md-4 col-sm-6 text-center">
-            <div className="d-flex justify-content-center align-items-center gap-2">
-              <StyledFontAwesomeIcon icon={faUser} />
-
-              <Counter
-                target={c(contentMap, 'home.stat_2_number')}
-                start={startCounters}
-              />
-            </div>
-            <CouterItem>{c(contentMap, 'home.stat_2_label')}</CouterItem>
-          </div>
-
-          <div className="col-md-4 col-sm-6 text-center">
-            <div className="d-flex justify-content-center align-items-center gap-2">
-              <StyledFontAwesomeIcon icon={faStar} />
-
-              <Counter
-                target={c(contentMap, 'home.stat_3_number')}
-                start={startCounters}
-              />
-            </div>
-            <CouterItem>{c(contentMap, 'home.stat_3_label')}</CouterItem>
-          </div>
+          ))}
         </div>
       </div>
     </StyledSection>
