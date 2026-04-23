@@ -32,6 +32,18 @@ const StyledNavContainer = styled.div`
   }
 `;
 
+const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+  }
+`;
+
 const StyledButton = styled.button`
   color: #fff;
   border-color: #fff;
@@ -170,9 +182,10 @@ function Navigation() {
       onClick={handleNavClick}
     >
       <StyledNavContainer className="container">
-        <Link to="/" className="navbar-brand">
+        <StyledLink to="/" className="navbar-brand">
           <Logo />
-        </Link>
+          <div>{c(contentMap, 'global.brand_name')}</div>
+        </StyledLink>
 
         <StyledButton
           type="button"

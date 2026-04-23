@@ -12,6 +12,7 @@ import PhotoGallery from '../components/PhotoGallery';
 import { useContent } from '../hooks/useContent.js';
 import LoadingSpinner from '../components/LoadingSpinner.jsx';
 import { c } from '../utils/content.js';
+import { Helmet } from 'react-helmet-async';
 
 const StyledHome = styled.div``;
 

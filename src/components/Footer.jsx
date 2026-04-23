@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import {
   faFacebook,
   faInstagram,
+  faLinkedin,
   faPinterest,
   faTiktok,
   faTwitter,
@@ -50,6 +51,7 @@ function Footer() {
     instagram: faInstagram,
     tiktok: faTiktok,
     youtube: faYoutube,
+    linkedin: faLinkedin,
   };
 
   const socialLinks = [1, 2, 3, 4]
@@ -71,7 +73,10 @@ function Footer() {
           <div className="col-md-4 my-3">
             <div className="d-flex align-items-center gap-1">
               <h5 className="fw-bold">Despre</h5>
-              <Logo width="100" />
+              <div className="d-flex gap-2 align-items-center">
+                <Logo width="100" />
+                <div>{c(contentMap, 'global.brand_name')}</div>
+              </div>
             </div>
             <p>{c(contentMap, 'footer_description')}</p>
           </div>
