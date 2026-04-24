@@ -33,7 +33,7 @@ function Home() {
 
   return (
     <StyledHome>
-      <SplitSection btn1Path="/portfolio" />
+      <SplitSection />
       <Stats />
       <PhotoGallery
         title={c(contentMap, 'home.gallery_title')}

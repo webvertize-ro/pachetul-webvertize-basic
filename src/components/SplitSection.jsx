@@ -155,7 +155,7 @@ const HeaderBusinessPic = styled.img`
   }
 `;
 
-function SplitSection({ imageRight = true, btn1Path }) {
+function SplitSection({ imageRight = true }) {
   const { contentMap } = useContent();
 
   return (
@@ -174,7 +174,9 @@ function SplitSection({ imageRight = true, btn1Path }) {
                 {c(contentMap, 'home.header_description')}
               </ShortIntro>
               <ButtonsContainer>
-                <Button1 to={btn1Path}>
+                <Button1
+                  to={c(contentMap, 'home.header_button_projects_route')}
+                >
                   {c(contentMap, 'home.header_button_projects_text')}
                 </Button1>
 

@@ -431,3 +431,7 @@ insert into content (website_id, page, section, key, label, value, content_type,
 ('49e00d1c-b989-41c3-a898-62c9500fcb64', 'too-many-requests', 'too-many-requests-section', 'too-many-requests-paragraph-2', 'Pagina de Prea Multe Solicitări - Paragraful 2', 'Dacă este o urgență, ne puteți contacta direct la numărul de telefon 0712345678. Mulțumim pentru înțelegere!', 'text', 334),
 ('49e00d1c-b989-41c3-a898-62c9500fcb64', 'too-many-requests', 'too-many-requests-section', 'too-many-requests-button-text', 'Pagina de Prea Multe Solicitări - Buton Text', 'Înapoi pe pagina principală', 'text', 335),
 ('49e00d1c-b989-41c3-a898-62c9500fcb64', 'too-many-requests', 'too-many-requests-section', 'too-many-requests-button-route', 'Pagina de Prea Multe Solicitări - Buton Rută', '/', 'text', 336);
+
+insert into content (website_id, page, section, key, label, value, content_type, display_order) values
+
+('49e00d1c-b989-41c3-a898-62c9500fcb64', 'home', 'header', 'header_button_projects_route', 'Buton Proiecte Rută', '/projects', 'text', 44);
