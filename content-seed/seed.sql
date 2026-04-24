@@ -435,3 +435,5 @@ insert into content (website_id, page, section, key, label, value, content_type,
 insert into content (website_id, page, section, key, label, value, content_type, display_order) values
 
 ('49e00d1c-b989-41c3-a898-62c9500fcb64', 'home', 'header', 'header_button_projects_route', 'Buton Proiecte Rută', '/projects', 'text', 44);
+
+-- update the name pages to Romanian
