@@ -27,6 +27,7 @@ function Cookies() {
         heroDesc={c(contentMap, 'cookies.header_description')}
         heroBg={c(contentMap, 'cookies.header_bg_image')}
         btnTxt={c(contentMap, 'cookies.header_button_text')}
+        ctaBtn={false}
       />
       <Accordion />
       <CookiesInfoSection />

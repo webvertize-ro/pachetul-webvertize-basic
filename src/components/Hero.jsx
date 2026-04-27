@@ -82,14 +82,14 @@ const Button = styled(Link)`
   }
 `;
 
-function Hero({ heroBg, heroTitle, heroDesc, btnTxt }) {
+function Hero({ heroBg, heroTitle, heroDesc, btnTxt, ctaBtn = true }) {
   return (
     <StyledHero heroBg={heroBg}>
       <div className="container">
         <TextContent>
           <StyledH2>{heroTitle}</StyledH2>
           <StyledP>{heroDesc}</StyledP>
-          {heroTitle !== 'Politica noastră privind cookie-urile' && (
+          {ctaBtn && (
             <Modal>
               <Modal.Open opens="form-modal">
                 <Button>{btnTxt}</Button>
