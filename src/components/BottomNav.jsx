@@ -116,7 +116,7 @@ function BottomNav() {
         {programOpen && (
           <ProgramBox>
             <StyledH5>Program de lucru</StyledH5>
-            {progrm.map((p) => (
+            {program.map((p) => (
               <ProgramLine>
                 <strong>{p.day}</strong>
                 {p.schedule}

@@ -58,11 +58,19 @@ const StyledRow = styled.div`
   gap: 1.5rem;
 `;
 
+const ReviewName = styled.div`
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  font-size: 1.2rem;
+`;
+
 function Testimonials() {
   const { contentMap } = useContent();
 
   const reviews = [1, 2, 3, 4, 5].map((n) => ({
     image: c(contentMap, `home.review_${n}_image`),
+    name: c(contentMap, `home.review_${n}_name`),
     stars: c(contentMap, `home.review_${n}_stars`),
     quote: c(contentMap, `home.review_${n}_quote`),
   }));
@@ -88,6 +96,7 @@ function Testimonials() {
               {/* Avatar and Stars */}
               <div className="d-flex flex-column justify-content-center align-items-center">
                 <Avatar img={review.image} />
+                <ReviewName>{review.name}</ReviewName>
                 <RatingStars stars={review.stars} />
               </div>
               {/* Testimonial Text */}
