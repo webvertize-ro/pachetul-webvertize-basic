@@ -180,7 +180,7 @@ function ShortServices() {
               ))}
             </StyledUl>
             <div className="d-flex justify-content-center align-items-center gap-2">
-              <Button1 to="/services">
+              <Button1 to={c(contentMap, 'home.services_button_more_text')}>
                 {c(contentMap, 'home.services_button_more_text')}
               </Button1>
               <Modal>
