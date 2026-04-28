@@ -7,6 +7,8 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 import { useState } from 'react';
+import {c} from '../utils/content';
+import { useContent } from '../hooks/useContent';
 
 const StyledBottomNav = styled.div`
   display: none;
@@ -90,12 +92,22 @@ const StyledH5 = styled.h5`
 
 const ProgramLine = styled.div`
   display: flex;
+  justify-content: space-between;
   gap: 0.25rem;
   font-size: 1.1rem;
 `;
 
 function BottomNav() {
   const [programOpen, setProgramOpen] = useState(false);
+  const {contentMap} = useContent();
+  const program = [1, 2, 3, 4, 5, 6, 7].map((n) => ({
+    day: c(contentMap, `global.contact_hours_${n}_day`),
+    schedule:  c(contentMap, `global.contact_hours_${n}_schedule`)
+  }));
+
+
+  
+  
 
   return (
     <StyledBottomNav>
@@ -118,8 +130,13 @@ function BottomNav() {
             <StyledH5>Program de lucru</StyledH5>
             {program.map((p) => (
               <ProgramLine>
+                <div>
                 <strong>{p.day}</strong>
+                </div>
+                <div>
                 {p.schedule}
+
+                </div>
               </ProgramLine>
             ))}
           </ProgramBox>
