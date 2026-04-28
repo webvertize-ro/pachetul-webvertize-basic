@@ -31,7 +31,11 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'CAPTCHA verification failed!' });
   }
 
-
+  // Determine the user's IP
+  const forwardedFor = req.headers['x-forwarded-for'];
+  const ip = forwardedFor
+    ? forwardedFor.split(',')[0].trim()
+    : req.socket?.remoteAddress;
   
   
   // Count how many submissions this IP made in the last 24 hours
@@ -52,11 +56,7 @@ export default async function handler(req, res) {
     return res.status(429).json({ status: 'Too many requests!' });
   }
 
-  // Determine the user's IP
-  const forwardedFor = req.headers['x-forwarded-for'];
-  const ip = forwardedFor
-    ? forwardedFor.split(',')[0].trim()
-    : req.socket?.remoteAddress;
+  
 
   // Calculate the date in format dd/mm/YYYY - h:m:s
   const theDate = new Date();
