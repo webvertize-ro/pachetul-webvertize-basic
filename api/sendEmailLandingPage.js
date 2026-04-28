@@ -1,5 +1,6 @@
 import nodemailer from 'nodemailer';
 import { WEBSITE_ID } from '../config.js';
+import { PACKAGE } from '../config.js';
 import supabase from '../services/supabase.js';
 
 export default async function handler(req, res) {
