@@ -6,6 +6,10 @@ import { c } from '../utils/content';
 const StyledImg = styled.img`
   max-width: ${(props) => (props.width ? props.width : '160px')};
   max-height: 60px;
+
+  @media (max-width: 576px) {
+    order: 2;
+  }
 `;
 
 function Logo({ width }) {

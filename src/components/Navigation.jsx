@@ -42,6 +42,18 @@ const StyledLink = styled(Link)`
   &:hover {
     color: #fff;
   }
+
+  @media (max-width: 576px) {
+    flex-direction: column;
+  }
+`;
+
+const BusinessName = styled.div`
+  display: flex;
+  @media (max-width: 576px) {
+    font-size: 1rem;
+    order: 1;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -184,7 +196,7 @@ function Navigation() {
       <StyledNavContainer className="container">
         <StyledLink to="/" className="navbar-brand">
           <Logo />
-          <div>{c(contentMap, 'global.brand_name')}</div>
+          <BusinessName>{c(contentMap, 'global.brand_name')}</BusinessName>
         </StyledLink>
 
         <StyledButton
